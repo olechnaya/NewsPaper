@@ -69,7 +69,9 @@ Author.objects.all().order_by("-rating")[:1].values("name__username","rating")
 
 #Вывести дату добавления, username автора, рейтинг, заголовок и превью лучшей статьи,
 # основываясь на лайках/дислайках к этой статье.
-Post.objects.all().order_by("-rating")[:1].values("dateCreation","author__name__username","rating","title","text")
+
+from django.db.models.functions import Left
+Post.objects.all().order_by("-rating")[:1].values("dateCreation","author__name__username","rating","title", new_text=Left("text", 125))
 
 #Вывести все комментарии (дата, пользователь, рейтинг, текст) к этой статье.
 bestPost = Post.objects.all().order_by("-rating")[0]
