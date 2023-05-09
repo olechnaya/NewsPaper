@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 
 class Author(models.Model):
+    class Meta:
+        verbose_name = 'Авторы'
+        verbose_name_plural = 'Авторы'
     name = models.OneToOneField(User, on_delete=models.CASCADE)
     rating = models.SmallIntegerField(default=0)
     
@@ -22,10 +25,17 @@ class Author(models.Model):
             return self.name.username
 
 class Category(models.Model):
-
+    class Meta:
+        verbose_name = 'Категории'
+        verbose_name_plural = 'Категории'
     name = models.CharField(max_length=64, unique=True, default="")
+    def __str__(self):
+        return self.name
 
 class Post(models.Model):
+    class Meta:
+        verbose_name = 'Посты'
+        verbose_name_plural = 'Посты'
     article = "ART"
     news = "NWS"
 
@@ -40,6 +50,9 @@ class Post(models.Model):
     title = models.CharField(max_length=128)
     text = models.TextField()
     rating = models.SmallIntegerField(default=0.0)
+
+    def __str__(self):
+        return self.title
 
     # Методы like() и dislike() в моделях Comment и Post, которые увеличивают/уменьшают рейтинг на единицу.
     def like(self):
@@ -60,6 +73,9 @@ class PostCategory(models.Model):
     categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
 
 class Comment(models.Model):
+    class Meta:
+        verbose_name = 'Комментарии'
+        verbose_name_plural = 'Комментарии'
     commentPost = models.ForeignKey(Post, on_delete=models.CASCADE)
     commentUser = models.ForeignKey(User, on_delete=models.CASCADE)
     # commentUser = models.ForeignKey(User)
