@@ -7,26 +7,30 @@
 
 {% block abracadabra %}
 
-{% with string='ты ж бля' %}
-{{ string|censor }}
-{% endwith %}
-
-    <h1>Все статьи <span>{{ posts | length }} штук(и)</span></h1>
-    <h3> За дату: {{ time_now|date:'M d Y' }}</h3>
-    <p> {{ value1 | default_if_none:"вв переменную value1 ничего не передано" }}</p>
-    {% if posts %}
-        <!-- {{ posts }} -->
-        {% for post in posts %}
-            <h2>{{ post.title }}</h2>
-            <p>{{ post.dateCreation | date:'d.m.y' }}</p>
-            <p>{{ post.preview | truncatechars:50 }}</p>
-            <p>{{ post.postType }}</p>
-            <p>{{ post.category }}</p>
-            
+            <p>Проверка фильтра цензурирования обсценной лексики:
+                {% with string='ты ж бля' %}
+                    {{ string|censor }}
+                {% endwith %}
+            </p>
+        {% if posts %}
+            <h2 class="pb-2 border-bottom">Все статьи <span>{{ posts | length }} штук(и)</span></h2>
+            <!-- <h3> За дату: {{ time_now|date:'M d Y' }}</h3> -->
+            {% for post in posts %}
+            <div class="row g-4 py-5 row-cols-1">
+                <div class="col d-flex align-items-start">           
+                    <div>
+                        <h3 class="fs-2">{{ post.title }}</h3>
+                        <p>{{ post.preview | truncatechars:50 }}</p>
+                        <p>{{ post.dateCreation | date:'d.m.y' }}</p>
+                        <a href="{% url 'detail' post.id %}" class="btn btn-primary">
+                            Читать
+                        </a>
+                    </div>
+                </div>  
+            </div>
             {% endfor%}
-       
-    {% else %}
-        <h2>Статей пока нет</h2>
-    {% endif %}
-
+        {% else %}
+            <h2 class="pb-2 border-bottom">Статей пока нет</h2>           
+         {% endif %}
+          
 {% endblock abracadabra %}
