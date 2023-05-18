@@ -1,7 +1,7 @@
 from django.db import models
 from django.db.models import Sum
 from django.contrib.auth.models import User
-
+from datetime import datetime
 
 class Author(models.Model):
     class Meta:
@@ -66,7 +66,6 @@ class Post(models.Model):
     # Метод preview() возвращает начало статьи (предварительный просмотр) длиной 124 символа и добавляет многоточие в конце.
     def preview(self):
         return "".join((self.text[0:124],'...'))
-
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)

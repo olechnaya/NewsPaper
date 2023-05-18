@@ -1,11 +1,32 @@
 {% extends 'defaultLayout.html' %} 
- 
+{% load custom_filters %}
 <!-- Название у нас будет proudcts -->
 {% block title %}
-Статьи
+    Статьи
 {% endblock title %}
 
 {% block abracadabra %}
-<h1>Все статьи</h1>
-{{ posts }}
+
+{% with string='ты ж бля' %}
+{{ string|censor }}
+{% endwith %}
+
+    <h1>Все статьи <span>{{ posts | length }} штук(и)</span></h1>
+    <h3> За дату: {{ time_now|date:'M d Y' }}</h3>
+    <p> {{ value1 | default_if_none:"вв переменную value1 ничего не передано" }}</p>
+    {% if posts %}
+        <!-- {{ posts }} -->
+        {% for post in posts %}
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.dateCreation | date:'d.m.y' }}</p>
+            <p>{{ post.preview | truncatechars:50 }}</p>
+            <p>{{ post.postType }}</p>
+            <p>{{ post.category }}</p>
+            
+            {% endfor%}
+       
+    {% else %}
+        <h2>Статей пока нет</h2>
+    {% endif %}
+
 {% endblock abracadabra %}
