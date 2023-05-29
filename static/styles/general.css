@@ -2,6 +2,16 @@
     display: inline;
     margin-bottom: 0;
 }
+
+.nav-link .ico {
+    margin-right: 0;
+}
+
 .ico {
     margin-right: 10px;
+}
+
+.required:after {
+    content: '*';
+    color: red;
 }

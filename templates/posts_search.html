@@ -1,0 +1,70 @@
+{% extends 'defaultLayout.html' %} 
+{% load static %}
+
+{% load widget_tweaks %}
+
+{% load custom_filters %}
+
+{% block title %}
+    Поиск по статьям
+{% endblock title %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'styles/general.css' %}">
+{% endblock page_styles %}
+
+{% block abracadabra %}
+                                     
+
+<form method="GET">
+    <form method="GET">
+        <div class="row  align-items-end">
+            <div class="col">
+                {{ filter.form.title.label_tag }}            
+                {% render_field filter.form.title class="form-control" placeholder="Заголовок статьи"%}
+               
+            </div>
+            <div class="col">
+                {{ filter.form.dateCreation.label_tag }}            
+                {% render_field filter.form.dateCreation class="form-control" %}
+               
+            </div>
+            <div class="col">
+                {{ filter.form.price.author }}            
+                {% render_field filter.form.author class="form-select" %}
+               
+            </div>
+            
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary">Найти</button>
+              </div>
+        </div>
+    </form>
+    <!-- {{ filter.form }}  -->
+    <!-- Форму от фильтров за нас сделает Django. А вот кнопку, увы, придётся делать самому -->
+   
+</form>
+
+{% for post in filter.qs %}
+<div class="row g-4 py-5 row-cols-1">
+    <div class="col d-flex align-items-start">           
+        <div>
+            <h3 class="fs-2">{{ post.title }}</h3>
+            <p>{{ post.dateCreation | date:'d.m.y' }} by {{ post.author }}</p>
+            <p>{{ post.preview | truncatechars:50 }}</p>
+            <p>
+                {% for category in post.category.all %}                
+                 <span class="badge text-bg-secondary">{{ category.name }}</span>
+                {% endfor%}
+            </p>
+            <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">Редактировать</a>
+            <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">Удалить</a>
+            <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-sm">
+                Читать
+            </a>
+        </div>
+    </div>  
+</div>
+{% endfor %}
+
+{% endblock abracadabra %}

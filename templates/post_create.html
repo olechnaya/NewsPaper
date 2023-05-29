@@ -1,11 +1,14 @@
-<!--  наследуемся от шаблона default.html, который мы создавали ещё во времена flatpages -->
 {% extends 'defaultLayout.html' %} 
- 
-<!-- Название у нас будет proudcts -->
+{% load static %}
+
 {% block title %}
 Создаем пост
 {% endblock title %}
- 
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'styles/general.css' %}">
+{% endblock page_styles %}
+
 <!-- В контенте на странице мы выводим сам товар, айди которого было передано в адрес -->
 {% block abracadabra %}
 

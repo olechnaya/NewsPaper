@@ -29,6 +29,13 @@
         <li class="nav-item"><a href="#" class="nav-link disabled">Авторы</a></li>
         <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
         <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
+        <li class="nav-item">
+          <a href="{% url 'search' %}" class="nav-link">
+            <svg class="ico text-black" width="24" height="24" fill="currentColor">
+              <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #search"></use>
+          </svg>
+          </a>
+        </li>
       </ul>
     </header>
   </div>
