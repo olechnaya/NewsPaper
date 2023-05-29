@@ -17,15 +17,57 @@
                 {% with string='ты ж бля' %}
                     {{ string|censor }}
                 {% endwith %}
-            </p>
+            </p>                          
+
         {% if posts %}
-        <div class="btn-toolbar justify-content-between border-bottom pb-2">
-           <h2 class="post-title">Все статьи <span>{{ posts | length }} штук(и)</span> </h2>
+        <div class="btn-toolbar justify-content-between border-bottom pb-2 mb-5">
+           <h2 class="post-title">Всего статей <span>{{ paginator.count }} штук(и)</span> </h2>
             <a href="{% url 'create' %}" class="btn btn-success">
                 <svg class="ico text-white" width="24" height="24" fill="currentColor">
                     <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #plus-lg"></use>
                 </svg>Добавить статью</a>
         </div>
+
+        {% if paginator.count > 5 %}            
+        <nav>
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page=1">Первая страница</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                {% endif %}
+                {% for num in page_obj.paginator.page_range %}
+                    {% if page_obj.number == num %}
+                        <li class="page-item active">
+                            <a class="page-link">{{ num }}</a>
+                        </li>
+                       
+                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                        </li>
+                    {% endif %}
+              {% endfor %}
+              {% if page_obj.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li> 
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+                    </li>                   
+                   
+              {% endif %}
+              
+            </ul>
+          </nav>            
+        {% endif%} 
             
             <!-- <h3> За дату: {{ time_now|date:'M d Y' }}</h3> -->
             {% for post in posts %}
@@ -53,5 +95,6 @@
         {% else %}
             <h2 class="pb-2 border-bottom">Статей пока нет</h2>           
          {% endif %}
+         
           
 {% endblock abracadabra %}

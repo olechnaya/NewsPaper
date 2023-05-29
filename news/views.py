@@ -2,12 +2,15 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import *
 from .forms import PostForm
 
+from django.core.paginator import Paginator
+
 # Create your views here.
 class PostsList(ListView):
     model = Post  
     template_name = 'posts.html'
     context_object_name = 'posts'
-    queryset = Post.objects.order_by('-id')
+    queryset = Post.objects.order_by('-dateCreation')
+    paginate_by = 5 # поставим постраничный вывод в один элемент
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
