@@ -1,0 +1,34 @@
+<!--  наследуемся от шаблона default.html, который мы создавали ещё во времена flatpages -->
+{% extends 'defaultLayout.html' %} 
+ 
+<!-- Название у нас будет proudcts -->
+{% block title %}
+Создаем пост
+{% endblock title %}
+ 
+<!-- В контенте на странице мы выводим сам товар, айди которого было передано в адрес -->
+{% block abracadabra %}
+
+
+{% if isUpdateView  %}
+        <h1>Редактировать пост</h1>
+    {% else %}
+        <h1>Добавить пост</h1>
+{% endif %}
+{{ output }}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="col-6 mb-3">
+        {{ form }} <!-- Теперь нам нужна только готовая форма и кнопка -->
+    </div>
+    {% if isUpdateView  %}
+        <input type="submit" value="Сохранить изменения" class="btn btn-primary">
+        {% else %}
+        <input type="submit" value="Добавляем" class="btn btn-primary">
+    {% endif %}
+</form>
+
+
+
+{% endblock abracadabra %}

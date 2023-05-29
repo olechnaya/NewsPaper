@@ -1,0 +1,25 @@
+<!--  наследуемся от шаблона default.html, который мы создавали ещё во времена flatpages -->
+{% extends 'defaultLayout.html' %} 
+{% load static %}
+
+<!-- Название у нас будет proudcts -->
+{% block title %}
+Удаление поста
+{% endblock title %}
+
+
+{% block page_styles %}
+<!-- <link rel="stylesheet" href="{% static 'general.css' %}"> -->
+{% endblock page_styles %}
+
+{% block abracadabra %}
+<h2>Вы действительно хотите удалить выбранный пост?</h2>
+<p>  {{ post.title }}</p>
+<p>  {{ post.text }}</p>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-outline-danger" value="подтвердить">
+</form>
+
+{% endblock abracadabra %}

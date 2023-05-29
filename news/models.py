@@ -66,6 +66,10 @@ class Post(models.Model):
     # Метод preview() возвращает начало статьи (предварительный просмотр) длиной 124 символа и добавляет многоточие в конце.
     def preview(self):
         return "".join((self.text[0:124],'...'))
+    
+    # def get_absolute_url(self):
+    #      # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с постом       
+    #     return f'/posts/{self.id}' 
 
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)

@@ -1,9 +1,15 @@
 {% extends 'defaultLayout.html' %} 
+{% load static %}
+
 {% load custom_filters %}
-<!-- Название у нас будет proudcts -->
+<!-- Название у нас будет posts -->
 {% block title %}
     Статьи
 {% endblock title %}
+
+{% block page_styles %}
+<link rel="stylesheet" href="{% static 'styles/general.css' %}">
+{% endblock page_styles %}
 
 {% block abracadabra %}
 
@@ -13,16 +19,31 @@
                 {% endwith %}
             </p>
         {% if posts %}
-            <h2 class="pb-2 border-bottom">Все статьи <span>{{ posts | length }} штук(и)</span></h2>
+        <div class="btn-toolbar justify-content-between border-bottom pb-2">
+           <h2 class="post-title">Все статьи <span>{{ posts | length }} штук(и)</span> </h2>
+            <a href="{% url 'create' %}" class="btn btn-success">
+                <svg class="ico text-white" width="24" height="24" fill="currentColor">
+                    <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #plus-lg"></use>
+                </svg>Добавить статью</a>
+        </div>
+            
             <!-- <h3> За дату: {{ time_now|date:'M d Y' }}</h3> -->
             {% for post in posts %}
             <div class="row g-4 py-5 row-cols-1">
                 <div class="col d-flex align-items-start">           
                     <div>
                         <h3 class="fs-2">{{ post.title }}</h3>
+                        <p>{{ post.dateCreation | date:'d.m.y' }} by {{ post.author }}</p>
                         <p>{{ post.preview | truncatechars:50 }}</p>
-                        <p>{{ post.dateCreation | date:'d.m.y' }}</p>
-                        <a href="{% url 'detail' post.id %}" class="btn btn-primary">
+                        <p>
+                            {% for category in post.category.all %}
+                            
+                             <span class="badge text-bg-secondary">{{ category.name }}</span>
+                            {% endfor%}
+                        </p>
+                        <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">Редактировать</a>
+                        <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">Удалить</a>
+                        <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-sm">
                             Читать
                         </a>
                     </div>
