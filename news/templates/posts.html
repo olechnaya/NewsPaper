@@ -18,7 +18,13 @@
                     {{ string|censor }}
                 {% endwith %}
             </p>                          
-
+            <p>
+                 {% if user.is_authenticated %}
+                    залогинен
+                    {% else %}
+                    не залогинен
+                {% endif %}
+            </p>
         {% if posts %}
         <div class="btn-toolbar justify-content-between border-bottom pb-2 mb-5">
            <h2 class="post-title">Всего статей <span>{{ paginator.count }} штук(и)</span> </h2>

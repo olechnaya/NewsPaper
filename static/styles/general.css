@@ -15,3 +15,22 @@
     content: '*';
     color: red;
 }
+
+.form-signing {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: auto;
+}
+
+/* .btn.ico-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+} */
+
+.ico-google {
+    width: 1em;
+    height: 1em;
+}

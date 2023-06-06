@@ -25,10 +25,6 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{% url 'posts' %}" class="nav-link active" aria-current="page">Список Новостей</a></li>
-        <li class="nav-item"><a href="#" class="nav-link disabled">Авторы</a></li>
-        <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
-        <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
         <li class="nav-item">
           <a href="{% url 'search' %}" class="nav-link">
             <svg class="ico text-black" width="24" height="24" fill="currentColor">
@@ -36,6 +32,17 @@
           </svg>
           </a>
         </li>
+        <li class="nav-item"><a href="{% url 'posts' %}" class="nav-link active" aria-current="page">Список Новостей</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">Авторы</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
+
+         {% if user.is_authenticated %}
+                     <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Выйти</a></li>
+                    {% else %}
+                    <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Войти</a></li>
+                {% endif %}
+       
       </ul>
     </header>
   </div>

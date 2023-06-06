@@ -1,11 +1,13 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import *
 from .forms import PostForm
-from .filters import PostFilter 
+from .filters import PostFilter
 
-from django.core.paginator import Paginator
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.views.generic import TemplateView
 
-# Create your views here.
 class PostsList(ListView):
     model = Post  
     template_name = 'posts.html'
@@ -17,6 +19,8 @@ class PostsList(ListView):
         context = super().get_context_data(**kwargs)
         context['time_now'] = datetime.utcnow() # добавим переменную текущей даты time_now
         return context
+    
+    
 
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostDetail(DetailView):
@@ -24,18 +28,18 @@ class PostDetail(DetailView):
     template_name = 'post.html'
     context_object_name = 'post'
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, CreateView):
     template_name = 'post_create.html'
     form_class = PostForm
     success_url = '/posts/'
 
-class PostDeleteView(DeleteView):
+class PostDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'post_delete.html'
     queryset = Post.objects.all()
     success_url = '/posts/'
 
 # дженерик для редактирования объекта
-class PostUpdateView(UpdateView):
+class PostUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'post_create.html'
     form_class = PostForm
     success_url = '/posts/'
