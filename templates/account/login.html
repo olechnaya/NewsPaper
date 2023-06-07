@@ -55,13 +55,19 @@
   {% endif %}
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
-  {{ form.as_p }}
+  {% comment %} {{ form.as_p }} {% endcomment %}
   
+        <input name="next" type="hidden" value="{{ redirect_to }}" />
+  {{ form.login.errors }}
+  <div class="login">{{ form.login }}</div>
+   <div class="login">{{ form.password }}{{ form.password.errors }}</div>
+
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   
   <button class="btn btn-primary btn-lg w-100" type="submit">{% trans "Sign In" %}</button>
+  <p><a href="{{ signup_url }}">sign up</a></p>
   <a class="btn btn-link" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
 </form>
 </div>
