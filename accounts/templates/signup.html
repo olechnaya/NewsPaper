@@ -1,0 +1,28 @@
+{% extends "defaultLayout.html" %}
+
+{% block title %}
+Регистрация на News Project
+{% endblock title %}
+
+{% block abracadabra %}
+    <div class="form-signing-up">
+        <h2> Войти в систему </h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            {% if error_message %}
+                <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+            {% endif %}
+        {% comment %} {{ form.as_p }} {% endcomment %}
+            {% for field in form.visible_fields %}  
+                <div class="form-floating">
+                    {{ field }}
+                    {{ field.label_tag }}
+                    
+                </div> 
+                <p>{{ field.errors }}</p>  
+            {% endfor %}
+            <input type="submit" class="w-100 btn btn-lg btn-primary" value="Продолжить">
+        </form>
+    </div>
+{% endblock %}

@@ -7,12 +7,7 @@
     Статьи
 {% endblock title %}
 
-{% block page_styles %}
-<link rel="stylesheet" href="{% static 'styles/general.css' %}">
-{% endblock page_styles %}
-
 {% block abracadabra %}
-
             <p>Проверка фильтра цензурирования обсценной лексики:
                 {% with string='ты ж бля' %}
                     {{ string|censor }}
@@ -23,6 +18,13 @@
                     залогинен
                     {% else %}
                     не залогинен
+                {% endif %}
+            </p>
+            <p>
+                {% if is_not_author %}
+                    Не автор
+                {% else %}
+                    Автор
                 {% endif %}
             </p>
         {% if posts %}

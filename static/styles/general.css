@@ -16,7 +16,8 @@
     color: red;
 }
 
-.form-signing {
+.form-signing,
+.form-signing-up {
     width: 100%;
     max-width: 330px;
     padding: 15px;
@@ -33,4 +34,17 @@
 .ico-google {
     width: 1em;
     height: 1em;
+}
+
+.errorlist {
+    list-style: none;
+    color: red;
+    padding: 0;
+}
+
+.nav-item span {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
 }

@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google', # https://console.developers.google.com/
     'django_filters',
-    'widget_tweaks',
+    'widget_tweaks',  
+     'django_extensions',
     
     'news',
     'accounts'
@@ -95,9 +96,15 @@ DATABASES = {
     }
 }
 
-# LOGIN_URL = '/oauth/login/'
-LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/posts/'
+LOGIN_URL = '/oauth/login/'
+
+# LOGIN_URL = '/accounts/login/' - до  использования формы allauth
+LOGIN_REDIRECT_URL = '/'
+
+ACCOUNT_SIGNUP_FORM_CLASS = 'news.forms.SignupForm'
+ACCOUNT_FORMS = {
+    'signup': 'news.forms.SignupForm'
+}
 
 SITE_ID = 1
 
@@ -132,7 +139,7 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'en-en'
 
 TIME_ZONE = 'UTC'
 

@@ -5,16 +5,26 @@
 Войти в систему
 {% endblock title %}
 
-{% block page_styles %}
-<link rel="stylesheet" href="{% static 'styles/general.css' %}">
-{% endblock page_styles %}
-
-
 {% block abracadabra %}
 
 <div class="form-signing">
     <h2> Войти</h2>
      <p><i> <small class="text-muted"> {{current_datetime}}</small></i></p>
+
+    {% if messages %}
+      <ul class="messages">
+          {% for message in messages %}
+              <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+          {% endfor %}
+      </ul>
+     <p>
+         {% if is_not_author %}
+            <a href="{% url 'upgrade' %}" class="btn btn-outline-dark w-100 "> Стать автором</a>
+        {% endif %}
+     </p>
+    {% endif %}
+
+
       {% if 'update' in request.GET.next %}
         <p> Если вы хотите <b>отредактировать новость/статью</b>, вам необходимо войти в систему под аккаунтом автора</p>
         {% elif 'create' in request.GET.next %}

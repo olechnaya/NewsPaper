@@ -1,12 +1,14 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.shortcuts import redirect
+from django.contrib import messages
+
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import *
 from .forms import PostForm
 from .filters import PostFilter
 
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView
+
 
 class PostsList(ListView):
     model = Post  
@@ -18,6 +20,7 @@ class PostsList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['time_now'] = datetime.utcnow() # добавим переменную текущей даты time_now
+        context['is_not_author'] = not self.request.user.groups.filter(name = 'authors').exists()
         return context
     
     
@@ -28,21 +31,37 @@ class PostDetail(DetailView):
     template_name = 'post.html'
     context_object_name = 'post'
 
-class PostCreateView(LoginRequiredMixin, CreateView):
+class PostCreateView(LoginRequiredMixin,PermissionRequiredMixin, CreateView):
+    permission_required = ('news.add_post')
     template_name = 'post_create.html'
     form_class = PostForm
-    success_url = '/posts/'
+    success_url = '/'
+    login_url = '/accounts/login/'
+    
+    def handle_no_permission(self):        
+        # add custom message
+        messages.error(self.request, 'Чтобы создать статью, вам нужно войти в качестве автора')
+        return redirect(self.get_login_url())
 
-class PostDeleteView(LoginRequiredMixin, DeleteView):
+class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
+    permission_required = ('news.delete_post')
     template_name = 'post_delete.html'
     queryset = Post.objects.all()
-    success_url = '/posts/'
+    success_url = '/'
+    login_url = '/accounts/login/'
+    
+    def handle_no_permission(self):        
+        # add custom message
+        messages.error(self.request, 'Чтобы удалить статью, вам нужно войти в качестве автора')
+        return redirect(self.get_login_url())
 
 # дженерик для редактирования объекта
-class PostUpdateView(LoginRequiredMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
+    permission_required = ('news.change_post')    
     template_name = 'post_create.html'
     form_class = PostForm
-    success_url = '/posts/'
+    success_url = '/'
+    login_url = '/accounts/login/'
     
     # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте который мы собираемся редактировать
     def get_object(self, **kwargs):
@@ -53,6 +72,11 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
         context = super().get_context_data(**kwargs)       
         context['isUpdateView'] = True        
         return context
+    
+    def handle_no_permission(self):        
+        # add custom message
+        messages.error(self.request, 'Чтобы редактировать статью, вам нужно войти в качестве автора')
+        return redirect(self.get_login_url())
 
 class PostSearch(ListView):
     model = Post  
