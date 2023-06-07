@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 
 class SignupForm(forms.ModelForm):
@@ -68,24 +68,21 @@ class SignupForm(forms.ModelForm):
         model = User
         fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
     
-    # def save(self, commit=True):
-    #     user = super(SignupForm, self).save(commit=False)
-    #     if commit:
-    #         user.save()
-    #     return user
-    def signup(self, request, user):
-        user.first_name = self.cleaned_data['first_name']
-        user.last_name = self.cleaned_data['last_name']
-        user.email = self.cleaned_data['email']
-        user.password1 = self.cleaned_data['password1']
+    def save(self, commit=True):
+        user = super(SignupForm, self).save(commit=False)
+        basic_group = Group.objects.get(name='common')
         user.save()
+        basic_group.user_set.add(user)
+        return user
     # def signup(self, request, user):
     #     user.first_name = self.cleaned_data['first_name']
     #     user.last_name = self.cleaned_data['last_name']
     #     user.email = self.cleaned_data['email']
+    #     user.password1 = self.cleaned_data['password1']
     #     user.save()
     #     return user
 
-class LoginForm(forms.Form):
+# не понятно почему ругается при раскомменчивании в сеттингах использование данной формы
+class LoginForm(forms.ModelForm):
     username = forms.CharField(max_length=65)
     password = forms.CharField(max_length=65, widget=forms.PasswordInput)
