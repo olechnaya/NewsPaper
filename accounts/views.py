@@ -9,3 +9,4 @@ class MyCustomLoginView(LoginView):
         current_datetime = datetime.datetime.now()  
         context['current_datetime'] = current_datetime
         return context
+

@@ -1,3 +1,8 @@
+python -m venv venv
+.\venv\Scripts\activate
+pip install pipreqs
+pipreqs --encoding utf-8
+
 PS C:\Users\User\Desktop\обучение\django projects\NewsPaper> py .\manage.py makemigrations
 PS C:\Users\User\Desktop\обучение\django projects\NewsPaper> py .\manage.py migrate  
 from news.models import *
