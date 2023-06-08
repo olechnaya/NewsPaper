@@ -75,7 +75,7 @@ class SignupForm(forms.ModelForm):
         basic_group.user_set.add(user)
         return user
 
-# не понятно почему ругается при раскомменчивании в сеттингах использование данной формы
+
 class MyLoginForm(LoginForm):
     required_css_class = 'required'
     error_css_class = 'error'
@@ -86,8 +86,14 @@ class MyLoginForm(LoginForm):
             'class':'form-control',
             'id': 'password' 
         }))
-
+    
     def __init__(self, *args, **kwargs):
         super(MyLoginForm, self).__init__(*args, **kwargs)
-        self.fields['password'].widget = forms.PasswordInput()
-       
+       # del self.fields['remember']
+        self.fields['login'].label = 'Логин или почта'
+        # self.fields['login'].help_text = 'Вы можете войти в систему, введя имя пользователя или почту'
+        self.fields['login'].widget = forms.TextInput(attrs={
+            'class':'form-control',
+            'id': 'login' 
+        })
+    
