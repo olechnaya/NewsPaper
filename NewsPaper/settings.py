@@ -98,13 +98,13 @@ DATABASES = {
 
 LOGIN_URL = '/oauth/login/'
 
-# LOGIN_URL = '/accounts/login/' - до  использования формы allauth
+# LOGIN_URL = '/accounts/login/' #- до  использования формы allauth
 LOGIN_REDIRECT_URL = '/'
 
 ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
 ACCOUNT_FORMS = {
     'signup': 'accounts.forms.SignupForm',
-    # 'login':'accounts.forms.LoginForm'
+    'login':'accounts.forms.MyLoginForm'
 }
 
 SITE_ID = 1

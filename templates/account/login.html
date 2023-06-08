@@ -53,31 +53,28 @@
     <p>{% blocktrans %}If you have not created an account yet, then please
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
   {% endif %}
-
+  {% comment %} гребаный костыль {% endcomment %}
+<style>
+form.login .form-floating:nth-of-type(3) {
+    display: none;
+}
+</style>
  {% load custom_filters %}
 <form class="login" method="POST" action="{% url 'account_login' %}">
   {% csrf_token %}
-  {% comment %} {{ form.as_p }} {% endcomment %}
-  
-        <input name="next" type="hidden" value="{{ redirect_to }}" />
+  {% comment %} {{ form }} {% endcomment %}
+  {% for field in form.visible_fields %}            
+        <div class="form-floating">        
+            {{ field| add_css:'form-control' }}
+            {{ field.label_tag }}
+        </div> 
+        <p>{{ field.errors }}</p>        
+    {% endfor %}
  {{ form.non_field_errors }}
-<style>
-.form-group input {
-    display: block;
-    width: 100%;
-    padding: 0.375rem 0.75rem;
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
-}
-</style>
 
-<div class="form-group">
+  <input name="next" type="hidden" value="{{ redirect_to }}" />
+
+{% comment %} <div class="form-group">
     <label for="{{ form.login.id_for_label }}">Email</label>
     {{ form.login }}
     {{ form.login.errors }}
@@ -90,7 +87,7 @@
 <div class="form-check">
     {{ form.remember }}
     <label for="{{ form.remember.id_for_label }}">Запомнить меня</label>
-  </div>
+  </div> {% endcomment %}
 
   {% comment %} {% for field in form.visible_fields %}            
         <div class="form-floating">        

@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User, Group
-
+from allauth.account.forms import LoginForm
 
 class SignupForm(forms.ModelForm):
     required_css_class = 'required'
@@ -74,15 +74,20 @@ class SignupForm(forms.ModelForm):
         user.save()
         basic_group.user_set.add(user)
         return user
-    # def signup(self, request, user):
-    #     user.first_name = self.cleaned_data['first_name']
-    #     user.last_name = self.cleaned_data['last_name']
-    #     user.email = self.cleaned_data['email']
-    #     user.password1 = self.cleaned_data['password1']
-    #     user.save()
-    #     return user
 
 # не понятно почему ругается при раскомменчивании в сеттингах использование данной формы
-class LoginForm(forms.ModelForm):
-    username = forms.CharField(max_length=65)
-    password = forms.CharField(max_length=65, widget=forms.PasswordInput)
+class MyLoginForm(LoginForm):
+    required_css_class = 'required'
+    error_css_class = 'error'
+
+    password = forms.CharField(
+        label = ('Пароль'),
+        widget=forms.PasswordInput(attrs={
+            'class':'form-control',
+            'id': 'password' 
+        }))
+
+    def __init__(self, *args, **kwargs):
+        super(MyLoginForm, self).__init__(*args, **kwargs)
+        self.fields['password'].widget = forms.PasswordInput()
+       

@@ -17,9 +17,9 @@ class MyCustomLoginView(LoginView):
         return context
 
 
-# не понятно вообще это где то используется?
-class MyLoginView(AllAuthLoginView):
-    template_name = 'account/login.html'
+# # не понятно вообще это где то используется?
+# class MyLoginView(AllAuthLoginView):
+#     template_name = 'account/login.html'
     
 
 
