@@ -89,7 +89,7 @@ class MyLoginForm(LoginForm):
     
     def __init__(self, *args, **kwargs):
         super(MyLoginForm, self).__init__(*args, **kwargs)
-       # del self.fields['remember']
+        del self.fields['remember']
         self.fields['login'].label = 'Логин или почта'
         # self.fields['login'].help_text = 'Вы можете войти в систему, введя имя пользователя или почту'
         self.fields['login'].widget = forms.TextInput(attrs={

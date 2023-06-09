@@ -96,6 +96,8 @@ DATABASES = {
     }
 }
 
+SESSION_REMEMBER=False
+
 LOGIN_URL = '/oauth/login/'
 
 # LOGIN_URL = '/accounts/login/' #- до  использования формы allauth

@@ -9,41 +9,14 @@
 <div class="form-signing">
   <h1>{% trans "Sign In" %}</h1>
 
-  {% comment %} гребаный костыль {% endcomment %}
- {% comment %} <style>
-label[for="id_remember"],
-#id_remember {
-    display: none;
-}
-</style> {% endcomment %}
-{% load widget_tweaks %}
-<form class="login mb-3" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  <div class="form-floating mb-3">
-        {% render_field form.login class="form-control"%}
-        {{ form.login.label_tag }}            
-    {% comment %} {{ form }} {% endcomment %}
-  </div>
-  <div class="form-floating mb-3">
-        {% render_field form.password class="form-control"%}
-        {{ form.password.label_tag }}            
-    {% comment %} {{ form }} {% endcomment %}
-
-  </div>
- {{ form.non_field_errors }}
-  <input name="next" type="hidden" value="{{ redirect_to }}" />
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  
-  <button class="btn btn-primary btn-lg w-100" type="submit">{% trans "Sign In" %}</button>  
-  {% comment %} <a class="btn btn-link" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a> {% endcomment %}
-</form>
-
   {% get_providers as socialaccount_providers %}
 
   {% if socialaccount_providers %}
-     <p class="w-100 text-center">— Или войдите через —</p>
+      {% comment %} <p>{% blocktrans with site.name as site_name %} Войти под учетной записью одной из представленных ниже систем. 
+      Or, <a href="{{ signup_url }}">sign up</a>
+      for a {{ site_name }} account and sign in below:{% endblocktrans %}</p> {% endcomment %}
+      <p>{% blocktrans with site.name as site_name %} Войти под учетной записью одной из представленных ниже систем. {% endblocktrans %}</p>
+
       <div class="socialaccount_ballot">
 
         <div class="socialaccount_providers">
@@ -69,7 +42,8 @@ label[for="id_remember"],
             {% endfor %}
         </div>
 
-   
+        <div class="login-or">{% trans 'or' %}</div>
+
       </div>
 
       {% include "socialaccount/snippets/login_extra.html" %}
@@ -79,6 +53,53 @@ label[for="id_remember"],
     <p>{% blocktrans %}If you have not created an account yet, then please
     <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
   {% endif %}
-<a class="btn btn-link text-center" href="{{ signup_url }}">Зарегистрироваться</a><br>
+  {% comment %} гребаный костыль {% endcomment %}
+
+ {% load custom_filters %}
+<form class="login" method="POST" action="{% url 'account_login' %}">
+  {% csrf_token %}
+  {% comment %} {{ form }} {% endcomment %}
+  {% for field in form.visible_fields %}            
+        <div class="form-floating">        
+            {{ field| add_css:'form-control' }}
+            {{ field.label_tag }}
+        </div> 
+        <p>{{ field.errors }}</p>        
+    {% endfor %}
+ {{ form.non_field_errors }}
+
+  <input name="next" type="hidden" value="{{ redirect_to }}" />
+
+{% comment %} <div class="form-group">
+    <label for="{{ form.login.id_for_label }}">Email</label>
+    {{ form.login }}
+    {{ form.login.errors }}
+</div>
+<div class="form-group">
+    <label for="{{ form.password.id_for_label }}">Пароль</label>
+    {{ form.password }}
+    {{ form.password.errors }}
+</div>
+<div class="form-check">
+    {{ form.remember }}
+    <label for="{{ form.remember.id_for_label }}">Запомнить меня</label>
+  </div> {% endcomment %}
+
+  {% comment %} {% for field in form.visible_fields %}            
+        <div class="form-floating">        
+            {{ field| add_css:'form-control' }}
+            {{ field.label_tag }}
+        </div> 
+        <p>{{ field.errors }}</p>        
+    {% endfor %} {% endcomment %}
+
+  {% if redirect_field_value %}
+  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+  {% endif %}
+  
+  <button class="btn btn-primary btn-lg w-100" type="submit">{% trans "Sign In" %}</button>
+  <a class="btn btn-link" href="{{ signup_url }}">Регистрация</a><br>
+  <a class="btn btn-link" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
+</form>
 </div>
 {% endblock %}
