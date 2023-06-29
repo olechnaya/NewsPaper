@@ -1,0 +1,22 @@
+{% extends 'defaultLayout.html' %} 
+
+{% block title %}
+Создаем категорию
+{% endblock title %}
+
+<!-- В контенте на странице мы выводим сам товар, айди которого было передано в адрес -->
+{% block abracadabra %}
+{% if  user.is_authenticated %}
+    <h1>Добавить категорию</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value ="Добавить" class="btn btn-primary">
+    
+    </form>
+{% else %}
+Нет доступа
+{% endif %}
+
+{% endblock abracadabra %}

@@ -1,0 +1,58 @@
+{% extends 'defaultLayout.html' %} 
+ 
+{% block title %}
+    {{ category.name }}
+{% endblock title %}
+ 
+{% block abracadabra %}  
+   <h1>
+    {{ category.name }} <small class="font-italic text-muted"> Подписчиков {{ subscribers.count }} </small>
+   </h1>
+   {% if is_subscribed %}
+        <div>
+            <em>
+                Отписаться от категории
+                <strong> {{ category.name }} ? </strong>
+            </em>
+            <button>
+                <a href = "{% url 'category_unsubscribe' category.id %}" > Отписаться!</a>
+                {% comment %} <a href = "{% url 'category_unsubscribe' category.name %}" > Отписаться!</a> {% endcomment %}
+            </button>
+        </div>
+        {% else %}        
+        <div>
+            <em>
+                Подписаться на категорию
+                <strong> {{ category.name }} ? </strong>
+            </em>
+            <button>
+                <a href = "{% url 'category_subscribe' category.id %}" > Подписаться !</a>
+                {% comment %} <a href = "{% url 'category_subscribe' category.name %}" > Подписаться !</a> {% endcomment %}
+            </button>
+        </div>
+    {% endif %}
+
+    {%  for post in category.post_set.all %}
+       <div class="row g-4 py-5 row-cols-1">
+                <div class="col d-flex align-items-start">           
+                    <div>
+                        <h3 class="fs-2">{{ post.title }}</h3>
+                        <p>{{ post.dateCreation | date:'d.m.y' }} by {{ post.author }}</p>
+                        <p>{{ post.text|slice:"100"|safe }}</p>
+                        
+                        {% comment %} 
+                        {{% if user.is_authentificated  %}}
+                        <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">Редактировать</a>
+                        <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">Удалить</a>
+                        {{% endif %}}
+                        {% endcomment %}
+                        <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-sm"> 
+                            Читать
+                        </a>
+                    </div>
+                </div>  
+            </div>
+
+    {% endfor %}
+
+{% endblock abracadabra %}

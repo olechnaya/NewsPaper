@@ -29,6 +29,8 @@ class Category(models.Model):
         verbose_name = 'Категории'
         verbose_name_plural = 'Категории'
     name = models.CharField(max_length=64, unique=True, default="")
+    subscribers = models.ManyToManyField(User)
+
     def __str__(self):
         return self.name
 

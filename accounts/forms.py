@@ -1,14 +1,16 @@
 from django import forms
 from django.contrib.auth.models import User, Group
-from allauth.account.forms import LoginForm
+from allauth.account.forms import SignupForm, LoginForm
 
-class SignupForm(forms.ModelForm):
+class CustomSignupForm(SignupForm):
     required_css_class = 'required'
     error_css_class = 'error'
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = "" 
+        self.fields["password1"].widget.attrs.update({"class": "form-control"})
+        self.fields["password2"].widget.attrs.update({"class": "form-control"})
 
     first_name = forms.CharField(
         max_length=30,
@@ -46,30 +48,34 @@ class SignupForm(forms.ModelForm):
             'class':'form-control',
             'id': 'adding-username' 
         }))
-    password1 =  forms.CharField(
-        max_length=30,
-        label = ('Пароль'),
-        widget=forms.PasswordInput(attrs={
-            'placeholder': 'введите пароль...', 
-            'class':'form-control',
-            'id': 'adding-password1' 
-        }))
-    # TODO: сделать проверку полей
-    password2 =  forms.CharField(
-        max_length=30,
-        label = ('Повторите пароль'),
-        widget=forms.PasswordInput(attrs={
-            'placeholder': 'повторите  пароль...', 
-            'class':'form-control',
-            'id': 'adding-password2' 
-        }))
+    # password =  forms.CharField(
+    #     max_length=30,
+    #     label = ('Пароль'),
+    #     widget=forms.PasswordInput(attrs={
+    #         'placeholder': 'введите пароль...', 
+    #         'class':'form-control',
+    #         'id': 'adding-password' 
+    #     }))
+    # password1 =  forms.CharField(
+    #     max_length=30,
+    #     label = ('Пароль'),
+    #     widget=forms.PasswordInput(attrs={
+    #         'placeholder': 'введите пароль...', 
+    #         'class':'form-control',
+    #         'id': 'adding-password1' 
+    #     }))
+    # # # TODO: сделать проверку полей
+    # password2 =  forms.CharField(
+    #     max_length=30,
+    #     label = ('Повторите пароль'),
+    #     widget=forms.PasswordInput(attrs={
+    #         'placeholder': 'повторите  пароль...', 
+    #         'class':'form-control',
+    #         'id': 'adding-password2' 
+    #     }))
 
-    class Meta:
-        model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2', )
-    
-    def save(self, commit=True):
-        user = super(SignupForm, self).save(commit=False)
+    def save(self, request):
+        user = super(CustomSignupForm, self).save(request)
         basic_group = Group.objects.get(name='common')
         user.save()
         basic_group.user_set.add(user)
@@ -89,7 +95,6 @@ class MyLoginForm(LoginForm):
     
     def __init__(self, *args, **kwargs):
         super(MyLoginForm, self).__init__(*args, **kwargs)
-        del self.fields['remember']
         self.fields['login'].label = 'Логин или почта'
         # self.fields['login'].help_text = 'Вы можете войти в систему, введя имя пользователя или почту'
         self.fields['login'].widget = forms.TextInput(attrs={

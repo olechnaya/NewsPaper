@@ -1,0 +1,53 @@
+{% extends 'defaultLayout.html' %} 
+{% load static %}
+
+{% load custom_filters %}
+
+{% block title %}
+    Категории
+{% endblock title %}
+
+{% block abracadabra %}
+    <div class="btn-toolbar justify-content-between border-bottom pb-2 mb-5">
+        <h1 class="post-title">Категории</h1>
+        <a href="{% url 'create_category' %}" class="btn btn-success d-flex align-items-center">
+            <svg class="ico text-white" width="24" height="24" fill="currentColor">
+                <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #plus-lg"></use>
+            </svg>Добавить категорию</a>                 
+    </div>
+
+
+     {% for category in categories %}
+        <p><a href="{% url 'category' category.id %}" class="btn btn-link">{{ category.name }}</a>
+        <br>
+        <a href = "{% url 'category_subscribe' category.id %}" > Подписаться !</a>
+        </p>
+     {% endfor%}
+
+{% endblock abracadabra %} 
+{% comment %} {% block abracadabra %} 
+
+{% if sub %}
+<div>
+    <em>
+        Подписаться на категорию 
+        <strong> {{category}} ? </strong>
+    </em>
+    <button>
+        <a href = "{% url 'subscribe' category.id %}" > Подписаться!</a> 
+    </button>
+</div>
+{% else %}
+<div>
+    <em>
+        Отписаться от категории 
+        <strong> {{category}} ? </strong>
+    </em>
+    <button>
+        {% comment %} <a href = "{% url 'unsubscribe' pk=category.id %}" > Отписаться!</a> 
+    </button>
+</div>
+{% endif %}
+
+
+{% endblock abracadabra %} {% endcomment %}

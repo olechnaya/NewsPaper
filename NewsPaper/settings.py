@@ -99,13 +99,12 @@ DATABASES = {
 SESSION_REMEMBER=False
 
 LOGIN_URL = '/oauth/login/'
-
+DEFAULT_FROM_EMAIL = "kozhinova.olka@yandex.ru"
 # LOGIN_URL = '/accounts/login/' #- до  использования формы allauth
 LOGIN_REDIRECT_URL = '/'
 
-ACCOUNT_SIGNUP_FORM_CLASS = 'accounts.forms.SignupForm'
-ACCOUNT_FORMS = {
-    'signup': 'accounts.forms.SignupForm',
+ACCOUNT_FORMS = {    
+    'signup': 'accounts.forms.CustomSignupForm',
     'login':'accounts.forms.MyLoginForm'
 }
 
@@ -135,10 +134,11 @@ AUTHENTICATION_BACKENDS = [
 ]
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
-
+ACCOUNT_SESSION_REMEMBER = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -160,8 +160,14 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru' # адрес сервера Яндекс-почты для всех один и тот же
+EMAIL_PORT = 465 # порт smtp сервера тоже одинаковый
+EMAIL_HOST_USER = 'kozhinova.olka' # ваше имя пользователя, например если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_PASSWORD = 'qvmkpwyhkdzfxdwe' # пароль от почты
+EMAIL_USE_SSL = True # Яндекс использует ssl, подробнее о том, что это, почитайте на Википедии, но включать его здесь обязательно

@@ -8,6 +8,8 @@
 {% endblock title %}
 
 {% block abracadabra %}
+
+
             <p>Проверка фильтра цензурирования обсценной лексики:
                 {% with string='ты ж бля' %}
                     {{ string|censor }}
@@ -33,7 +35,7 @@
             <a href="{% url 'create' %}" class="btn btn-success">
                 <svg class="ico text-white" width="24" height="24" fill="currentColor">
                     <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #plus-lg"></use>
-                </svg>Добавить статью</a>
+                </svg>Добавить статью</a>                 
         </div>
 
         {% if paginator.count > 5 %}            
@@ -99,7 +101,7 @@
                     </div>
                 </div>  
             </div>
-            {% endfor%}
+            {% endfor %}
         {% else %}
             <h2 class="pb-2 border-bottom">Статей пока нет</h2>           
          {% endif %}

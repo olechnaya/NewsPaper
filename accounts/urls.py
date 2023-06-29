@@ -1,6 +1,6 @@
-from django.urls import path, include
-from django.contrib.auth.views import LoginView, LogoutView
-from .views import MyCustomLoginView, BaseRegisterView, upgrade_me
+from django.urls import path
+from django.contrib.auth.views import LogoutView
+from .views import MyCustomLoginView, upgrade_me
 
 urlpatterns = [
     path('login/', MyCustomLoginView.as_view(template_name = './login.html'), 
