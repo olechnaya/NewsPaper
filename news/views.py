@@ -12,9 +12,14 @@ from .forms import PostForm
 from .filters import PostFilter
 
 from django.shortcuts import render
-from django.core.mail import send_mail
 
-class PostsList(ListView):
+class AuthorList(ListView):
+    model = Author
+    template_name = 'authors.html'
+    context_object_name = 'authors'
+    queryset = Author.objects.order_by('name')
+
+class PostList(ListView):
     model = Post  
     template_name = 'posts.html'
     context_object_name = 'posts'
@@ -27,29 +32,7 @@ class PostsList(ListView):
         context['is_author'] = self.request.user.groups.filter(name = 'authors').exists()
         # context['all_posts'] =  Post.objects.order_by('-dateCreation')
         return context
-    
-          
-        # mailing = News(
-        #     name=request.POST['name'],
-        #     description=request.POST['description'],
-        #     category=request.POST['category'])
-        
-        # html_content = render_to_string( 
-        #     'mailing/notification.html',
-        #     {'mailes': mailing }
-        # )
-        # msg = EmailMultiAlternatives(
-        #     subject=f'{mailing.name}',
-        #     body=mailing.description, #  это то же, что и message
-        #     from_email='studium2002_1@mail.ru',
-        #     to=['studium2002@mail.ru'], # это то же, что и recipients_list
-        # )
-        # msg.attach_alternative(html_content, "text/html") # добавляем html
-        # msg.send() # отсылаем    
-        
-        return super().get(request, *args, **kwargs) # отправляем пользователя обратно на GET-запрос.    
-    
-
+       
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostDetail(DetailView):
     model = Post 
@@ -59,13 +42,28 @@ class PostDetail(DetailView):
 # class based  views  выполняют за нас значительную часть задач
 # function based views можно использовать также - не забывать
 # Каждый раз, когда мы создаем какую-то страницу в джанге, это трехэтапный процесс - создание url, создание вью, создание темплейта
-class PostCreateView(LoginRequiredMixin,PermissionRequiredMixin, CreateView):
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.core.exceptions import PermissionDenied
+from datetime import datetime
+from django.utils import timezone
+from django.utils.timezone import timedelta
+
+class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post')
     template_name = 'post_create.html'
     form_class = PostForm
     success_url = '/'
     login_url = '/accounts/login/'
 
+    def test_func(self):
+        yesterday = datetime.now() - timedelta(days=1)
+        author = Author.objects.get(name_id=self.request.user.id)
+        post_per_day = Post.objects.filter(author=author, dateCreation__gt=yesterday).count()
+        if post_per_day > 3:
+            raise PermissionDenied("Вы уже достаточно наваяли сегодня, отдохните. Допускается постить до 3 штук в день")
+        else:
+            return redirect('/')
+        
     # def get_success_url(self):
     #     return reverse('post_create',args=(self.object.id,))
     
@@ -92,7 +90,7 @@ class PostCreateView(LoginRequiredMixin,PermissionRequiredMixin, CreateView):
         # add custom message
         messages.error(self.request, 'Чтобы создать статью, вам нужно войти в качестве автора')
         return redirect(self.get_login_url())
-
+        
 class NewsCategoryView(ListView):
     model = Category
     template_name = 'categories.html'
@@ -256,3 +254,9 @@ class PostSearch(ListView):
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset()) # вписываем наш фильтр в контекст
         return context
 
+
+def error_404(request, exception):
+        return render(request,'errors/404.html')
+
+def error_403(request, exception):
+        return render(request,'errors/403.html')

@@ -1,0 +1,11 @@
+{%extends 'defaultLayout.html'%}
+{% block title %}
+    Ошибка 403 
+{% endblock title %}
+{%block abracadabra%}
+    {%if exception%}
+        <h1>{{exception}}</h1>
+    {%else%}
+        <h1>Somethings Wrong!</h1>
+    {%endif%}
+{%endblock%}

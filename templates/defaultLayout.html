@@ -26,7 +26,7 @@
       <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">        
         <span class="fs-4">НОВОСТИ</span>
       </a>
-     
+     {% with request.resolver_match.url_name as url_name %}
       <ul class="nav nav-pills">
         <li class="nav-item">
           <a href="{% url 'search' %}" class="nav-link">
@@ -36,9 +36,9 @@
           </svg>
           </a>
         </li>
-        <li class="nav-item"><a href="{% url 'posts' %}" class="nav-link active" aria-current="page">Список Новостей</a></li>
-        <li class="nav-item"><a href="{% url 'categories' %}" class="nav-link">Категории</a></li>
-        <li class="nav-item"><a href="#" class="nav-link disabled">Авторы</a></li>
+        <li class="nav-item"><a href="{% url 'posts' %}" class="nav-link {% if url_name == 'posts' or  url_name == 'post' %}active{% endif %}" aria-current="page">Список Новостей</a></li>
+        <li class="nav-item"><a href="{% url 'categories' %}" class="nav-link {% if url_name == 'categories' or  url_name == 'category' %}active{% endif %}">Категории</a></li>
+        <li class="nav-item"><a href="{% url 'authors' %}" class="nav-link {% if url_name == 'authors' %}active{% endif %}">Авторы</a></li>
         <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
         <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
         
@@ -56,6 +56,7 @@
           {% endif %}
        
       </ul>
+      {% endwith %}
     </header>
   </div>
   

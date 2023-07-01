@@ -1,0 +1,29 @@
+{% extends 'defaultLayout.html' %} 
+{% load static %}
+
+{% load custom_filters %}
+
+{% block title %}
+    Авторы
+{% endblock title %}
+
+{% block abracadabra %}
+
+{% if authors %}
+     {% for author in authors %}
+        <p>{{ author.name }}</p>
+     {% endfor %}
+{% else %}
+    <h2 class="pb-2 border-bottom">Авторов пока нет</h2> 
+    <p>Станьте первым автором!</p>
+    <p>
+        <a href="{% url 'upgrade' %}" class="btn btn-dark">
+            <svg class="ico text-white" width="24" height="24" fill="currentColor">
+                <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-arrow-up"></use>
+            </svg>Стать автором
+        </a>    
+    </p>          
+{% endif %}
+         
+          
+{% endblock abracadabra %}
