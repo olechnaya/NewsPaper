@@ -1,6 +1,6 @@
 from django.urls import path
 from django.contrib.auth.views import LogoutView
-from .views import MyCustomLoginView, upgrade_me
+from .views import MyCustomLoginView, upgrade_me, downgrade_me
 
 urlpatterns = [
     path('login/', MyCustomLoginView.as_view(template_name = './login.html'), 
@@ -11,5 +11,6 @@ urlpatterns = [
 #     path('signup/', 
 #          BaseRegisterView.as_view(template_name = 'signup.html'), # так и не поняла почему здесь можно обойтись без ./
 #          name='signup'),
-    path('upgrade/', upgrade_me, name = 'upgrade')
+    path('upgrade/', upgrade_me, name = 'upgrade'),
+    path('downgrade/', downgrade_me, name = 'downgrade')
 ]

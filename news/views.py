@@ -19,12 +19,13 @@ class PostsList(ListView):
     template_name = 'posts.html'
     context_object_name = 'posts'
     queryset = Post.objects.order_by('-dateCreation')
-    paginate_by = 5 # поставим постраничный вывод в один элемент
+    paginate_by = 5 # поставим постраничный вывод в n- элементов
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['time_now'] = datetime.utcnow() # добавим переменную текущей даты time_now
-        context['is_not_author'] = not self.request.user.groups.filter(name = 'authors').exists()
+        context['is_author'] = self.request.user.groups.filter(name = 'authors').exists()
+        # context['all_posts'] =  Post.objects.order_by('-dateCreation')
         return context
     
           
@@ -108,7 +109,7 @@ class NewsCategoryView(ListView):
 #     return render(request,'category.html', {'pk': pk, 'category' : category, 'category_posts' : category_posts, 'subscribers': subscribers}) # реквест, шаблон, словарь контекста
 
 
-from django.http import JsonResponse
+#from django.http import JsonResponse
 @login_required
 def UnsubscribeCategory(request, pk): 
     category = Category.objects.get(pk=pk)
@@ -124,9 +125,6 @@ def SubscribeCategory(request, pk):
     result = 'Unsubscribed'
     return redirect(request.META.get('HTTP_REFERER'))
     #return JsonResponse(result, safe= False)
-    # return redirect(request.META.get('HTTP_REFERER'))
-
-
 
 def CategoryDetailView(request, pk):
    category = Category.objects.get(pk=pk)
@@ -134,7 +132,7 @@ def CategoryDetailView(request, pk):
    return render(request,'category.html', 
                  {'category': category,  
                   'is_subscribed' : is_subscribed, #,
-                  'subscribers': category.subscribers.all()
+                  '': category.subscribers.all()
                   }) 
 # from django.urls import resolve
 
@@ -210,7 +208,7 @@ class СategoryCreateView(CreateView):
     # form_class = PostForm
     success_url = '/'
 
-
+# проверка на то, что удаляет её создатель или админ, а не какой либо другой автор 
 class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
     permission_required = ('news.delete_post')
     template_name = 'post_delete.html'
@@ -223,6 +221,7 @@ class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
         messages.error(self.request, 'Чтобы удалить статью, вам нужно войти в качестве автора')
         return redirect(self.get_login_url())
 
+# проверка на то, что редактирует её создатель или админ, а не какой либо другой автор 
 # дженерик для редактирования объекта
 class PostUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
     permission_required = ('news.change_post')    

@@ -23,21 +23,37 @@
                 {% endif %}
             </p>
             <p>
-                {% if is_not_author %}
-                    Не автор
+                {% if is_author %}
+                   Автор
                 {% else %}
-                    Автор
+                    Не автор
                 {% endif %}
             </p>
         {% if posts %}
         <div class="btn-toolbar justify-content-between border-bottom pb-2 mb-5">
            <h2 class="post-title">Всего статей <span>{{ paginator.count }} штук(и)</span> </h2>
-            <a href="{% url 'create' %}" class="btn btn-success">
-                <svg class="ico text-white" width="24" height="24" fill="currentColor">
-                    <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #plus-lg"></use>
-                </svg>Добавить статью</a>                 
+            {% if is_author %}
+                <div>
+                    <a href="{% url 'create' %}" class="btn btn-success">
+                    <svg class="ico text-white" width="24" height="24" fill="currentColor">
+                        <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-medical"></use>
+                    </svg>Добавить статью
+                </a>  
+                <a href="{% url 'downgrade' %}" class="btn btn-outline-dark"> 
+                    <svg class="ico text-dark" width="24" height="24" fill="currentColor">
+                        <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-minus"></use>
+                    </svg>уволиться из  авторов
+                    </a>
+                </div>
+            {% else %} 
+                <a href="{% url 'upgrade' %}" class="btn btn-dark">
+                    <svg class="ico text-white" width="24" height="24" fill="currentColor">
+                        <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-arrow-up"></use>
+                    </svg>Стать автором
+                </a>    
+            {% endif%}        
         </div>
-
+        
         {% if paginator.count > 5 %}            
         <nav>
             <ul class="pagination">
@@ -80,21 +96,31 @@
         {% endif%} 
             
             <!-- <h3> За дату: {{ time_now|date:'M d Y' }}</h3> -->
-            {% for post in posts %}
+            {% comment %} {% for post in all_posts %} {% endcomment %}
+             {% for post in posts %}
             <div class="row g-4 py-5 row-cols-1">
                 <div class="col d-flex align-items-start">           
                     <div>
                         <h3 class="fs-2">{{ post.title }}</h3>
-                        <p>{{ post.dateCreation | date:'d.m.y' }} by {{ post.author }}</p>
-                        <p>{{ post.preview | truncatechars:50 }}</p>
                         <p>
-                            {% for category in post.category.all %}
-                            
-                             <span class="badge text-bg-secondary">{{ category.name }}</span>
+                            {% for category in post.category.all %}                            
+                                <span class="badge text-bg-secondary">{{ category.name }}</span>
                             {% endfor%}
                         </p>
-                        <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">Редактировать</a>
-                        <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">Удалить</a>
+                        <p>{{ post.get_category_type}} от {{ post.dateCreation | date:'d.m.y' }} от {{ post.author }}</p>
+                        <p>{{ post.preview | truncatechars:50 }}</p>
+                        {% if is_author %}
+                            <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">
+                             <svg class="ico" width="16" height="16" fill="currentColor">
+                                <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-text"></use>
+                            </svg>
+                            Редактировать</a>
+                            <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">
+                                 <svg class="ico" width="16" height="16" fill="currentColor">
+                                    <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-x"></use>
+                                </svg>
+                            Удалить</a>
+                        {% endif%}     
                         <a href="{% url 'detail' post.id %}" class="btn btn-primary btn-sm">
                             Читать
                         </a>

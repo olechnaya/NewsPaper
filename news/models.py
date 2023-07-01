@@ -43,7 +43,7 @@ class Post(models.Model):
 
     TYPE = [
         (article, "Статья"),
-        (news, "Новости"),
+        (news, "Новость"),
     ]
     author = models.ForeignKey(Author,on_delete=models.CASCADE)
     postType = models.CharField(max_length=20, choices=TYPE, default=article)
@@ -68,6 +68,9 @@ class Post(models.Model):
     # Метод preview() возвращает начало статьи (предварительный просмотр) длиной 124 символа и добавляет многоточие в конце.
     def preview(self):
         return "".join((self.text[0:124],'...'))
+    
+    def get_category_type(self):
+        return self.get_postType_display()
     
     # def get_absolute_url(self):
     #      # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с постом       
