@@ -16,13 +16,26 @@
             </svg>Добавить категорию</a>                 
     </div>
 
+    <div class="card-deck mb-3 text-center">
+        {% for category in categories %}
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">{{ category.name }}</h5>
+                    <p class="card-text text-muted">Cat desc</p>
+                    <a href = "{% url 'category' category.id %}" class="btn btn-primary stretched-link">Ознакомиться</a>
+                </div>
+                </div>
 
-     {% for category in categories %}
-        <p><a href="{% url 'category' category.id %}" class="btn btn-link">{{ category.name }}</a>
-        <br>
-        <a href = "{% url 'category_subscribe' category.id %}" > Подписаться !</a>
-        </p>
-     {% endfor%}
+            {% comment %} <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <a href="{% url 'category' category.id %}" class="btn btn-link">{{ category.name }}</a>
+                    <a class="btn btn-lg btn-block btn-outline-primary" href = "{% url 'category_subscribe' category.id %}">Подписаться</a>
+                </div>
+                </div> {% endcomment %}
+        {% endfor%}
+    </div>
+
+     
 
 {% endblock abracadabra %} 
 {% comment %} {% block abracadabra %} 

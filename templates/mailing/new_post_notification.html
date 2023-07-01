@@ -3,16 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Появился новый пост в вашей категории</title>
 </head>
 <body>
-    <h2>Появился новый пост в вашей категории</h2>
-    <p> В категории: {{category}} разместили новость {{news.name}} </p>
-    <a href = "http://127.0.0.1:8000{% url 'new' news.id %}">
-        <h1>{{news.name}}</h1>
-    </a>    
+    <h1>Появился новый пост в вашей категории</h1>
+    <p> В категории: {{category}} разместили публикацию {{post.title}} </p>
+    <h1>
+        <a href = "{% url 'post' post.id %}">
+            {{post.name}}
+        </a> 
+    </h1>
     <p>
-        {{news.description|truncatechars:100}} 
+        <a href = "http://localhost:8000{% url 'post' post.id %}">Перейти по ссылке</a>
+    </p>
+    <p>
+        {{post.text|truncatechars:100}} 
     </p>
 
 

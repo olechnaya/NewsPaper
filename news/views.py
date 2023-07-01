@@ -130,7 +130,8 @@ def CategoryDetailView(request, pk):
    return render(request,'category.html', 
                  {'category': category,  
                   'is_subscribed' : is_subscribed, #,
-                  '': category.subscribers.all()
+                #   'subscribers': category.subscribers.all()
+                  'subscribers': category.subscribers.all()
                   }) 
 # from django.urls import resolve
 
@@ -256,7 +257,7 @@ class PostSearch(ListView):
 
 
 def error_404(request, exception):
-        return render(request,'errors/404.html')
+       return render(request, 'errors/404.html', {'exception': exception})
 
 def error_403(request, exception):
-        return render(request,'errors/403.html')
+        return render(request, 'errors/403.html', {'exception': exception})

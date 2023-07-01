@@ -14,10 +14,8 @@
                 Отписаться от категории
                 <strong> {{ category.name }} ? </strong>
             </em>
-            <button>
-                <a href = "{% url 'category_unsubscribe' category.id %}" > Отписаться!</a>
+                <a href = "{% url 'category_unsubscribe' category.id %}" class="btn btn-outline-primary" > Отписаться!</a>
                 {% comment %} <a href = "{% url 'category_unsubscribe' category.name %}" > Отписаться!</a> {% endcomment %}
-            </button>
         </div>
         {% else %}        
         <div>
@@ -25,14 +23,12 @@
                 Подписаться на категорию
                 <strong> {{ category.name }} ? </strong>
             </em>
-            <button>
-                <a href = "{% url 'category_subscribe' category.id %}" > Подписаться !</a>
+                <a href = "{% url 'category_subscribe' category.id %}" class="btn btn-primary" > Подписаться !</a>
                 {% comment %} <a href = "{% url 'category_subscribe' category.name %}" > Подписаться !</a> {% endcomment %}
-            </button>
         </div>
     {% endif %}
-
-    {%  for post in category.post_set.all %}
+    {% load custom_filters %}
+    {%  for post in category.post_set.all|sort_by:'-dateCreation' %}
        <div class="row g-4 py-5 row-cols-1">
                 <div class="col d-flex align-items-start">           
                     <div>

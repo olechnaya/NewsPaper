@@ -18,6 +18,10 @@ of = ObscenceFilter()
 def censor(value):
     return of.censor(value)
 
+@register.filter
+def sort_by(queryset, order):
+    return queryset.order_by(order)
+
 @register.filter(name='add_css')
 def addcss(field, given_class):
     existing_classes = field.field.widget.attrs.get('class', None)
