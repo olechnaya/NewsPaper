@@ -40,7 +40,7 @@ class PostList(ListView):
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostDetail(DetailView):
     model = Post 
-    template_name = 'post.html'
+    template_name = 'news/post.html'
     context_object_name = 'post'
 
 # class based  views  выполняют за нас значительную часть задач
@@ -117,20 +117,20 @@ def SubscribeCategory(request, pk):
         )
         
         msg = EmailMultiAlternatives(
-            subject=f'Подтверждение подписи на категорию - {category}',
+            subject=f'Подтверждение подписи на категорию - {category.name}',
             body='',
             from_email= DEFAULT_FROM_EMAIL,
             to=[email,], # это то же, что и recipients_list - передаем коллекцию
         )
         
-        msg.attach_alternative('html', 'text/html')
+        msg.attach_alternative(html, 'text/html')
         try:
             msg.send() # отсылаем  
         except Exception as e:
             print(e)
-        return redirect('')
-
-    category.subscribers.add(request.user.id)
+        redirect(request.META.get('HTTP_REFERER'))
+        # TODO: реализовать страницу пользователя
+        # return redirect('')
     return redirect(request.META.get('HTTP_REFERER'))
     #return JsonResponse(result, safe= False)
 

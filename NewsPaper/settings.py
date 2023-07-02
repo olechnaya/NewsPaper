@@ -12,23 +12,21 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
-from dotenv import load_dotenv
-load_dotenv()
+from decouple import config,Csv,RepositoryEnv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-adkfe%%i%c4cjvnd35j0#ph+8+q&(v9+)_!=uuw&t%rmwyj3gg'
+SECRET_KEY = config('SECRET_KEY', default ="")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv(), default ="")
 
 
 # Application definition
@@ -101,7 +99,7 @@ DATABASES = {
 SESSION_REMEMBER=False
 
 LOGIN_URL = '/oauth/login/'
-DEFAULT_FROM_EMAIL = "kozhinova.olka@yandex.ru"
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default ="")
 # LOGIN_URL = '/accounts/login/' #- до  использования формы allauth
 LOGIN_REDIRECT_URL = '/'
 
@@ -169,8 +167,12 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru' # адрес сервера Яндекс-почты для всех один и тот же
-EMAIL_PORT = 465 # порт smtp сервера тоже одинаковый
-EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER") # ваше имя пользователя, например если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
-EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD") # пароль от почты
+EMAIL_HOST = config('EMAIL_HOST', default='localhost')  # адрес сервера Яндекс-почты для всех один и тот же
+EMAIL_PORT = config('EMAIL_PORT', default=25, cast=int) # порт smtp сервера тоже одинаковый
+EMAIL_HOST_USER = config("EMAIL_HOST_USER", default='') # ваше имя пользователя, например если ваша почта user@yandex.ru, то сюда надо писать user, иными словами, это всё то что идёт до собаки
+EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD", default='') # пароль от почты
 EMAIL_USE_SSL = True # Яндекс использует ssl, подробнее о том, что это, почитайте на Википедии, но включать его здесь обязательно
+
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

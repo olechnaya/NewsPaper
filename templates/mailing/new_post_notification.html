@@ -7,11 +7,9 @@
 </head>
 <body>
     <h1>Появился новый пост в вашей категории</h1>
-    <p> В категории: {{category}} разместили публикацию {{post.title}} </p>
+    <p> В категории: <i>{{category}}</i> разместили публикацию <strong> {{post.title}}</strong> </p>
     <h1>
-        <a href = "{% url 'post' post.id %}">
-            {{post.name}}
-        </a> 
+        {{post.title}}
     </h1>
     <p>
         <a href = "http://localhost:8000{% url 'post' post.id %}">Перейти по ссылке</a>
