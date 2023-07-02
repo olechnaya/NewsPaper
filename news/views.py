@@ -1,8 +1,11 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import PermissionRequiredMixin
+from django.shortcuts import render
 from django.shortcuts import redirect
 from django.contrib import messages
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
 
 
 
@@ -10,18 +13,19 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 from .models import *
 from .forms import PostForm
 from .filters import PostFilter
+from django.conf import settings
 
-from django.shortcuts import render
+DEFAULT_FROM_EMAIL = settings.DEFAULT_FROM_EMAIL
 
 class AuthorList(ListView):
     model = Author
-    template_name = 'authors.html'
+    template_name = 'news/authors.html'
     context_object_name = 'authors'
     queryset = Author.objects.order_by('name')
 
 class PostList(ListView):
     model = Post  
-    template_name = 'posts.html'
+    template_name = 'news/posts.html'
     context_object_name = 'posts'
     queryset = Post.objects.order_by('-dateCreation')
     paginate_by = 5 # поставим постраничный вывод в n- элементов
@@ -50,7 +54,7 @@ from django.utils.timezone import timedelta
 
 class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMixin, CreateView):
     permission_required = ('news.add_post')
-    template_name = 'post_create.html'
+    template_name = 'news/post_create.html'
     form_class = PostForm
     success_url = '/'
     login_url = '/accounts/login/'
@@ -71,7 +75,7 @@ class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMi
         
 class NewsCategoryView(ListView):
     model = Category
-    template_name = 'categories.html'
+    template_name = 'news/categories.html'
     context_object_name = 'categories'
     queryset = Category.objects.all()
 
@@ -88,7 +92,9 @@ class NewsCategoryView(ListView):
 #from django.http import JsonResponse
 @login_required
 def UnsubscribeCategory(request, pk): 
+    user = request.user
     category = Category.objects.get(pk=pk)
+
     category.subscribers.remove(request.user.id)
     result = 'Unsubscribed'
     return redirect(request.META.get('HTTP_REFERER'))
@@ -96,16 +102,42 @@ def UnsubscribeCategory(request, pk):
 
 @login_required
 def SubscribeCategory(request, pk): 
+    user = request.user
     category = Category.objects.get(pk=pk)
+
+    if not category.subscribers.filter(id=user.id).exists():
+        category.subscribers.add(user)
+        email = user.email
+        html = render_to_string(
+            'mailing/subscibed_to_cat_notification.html', 
+            {
+                'category': category,
+                'user': user,
+            },
+        )
+        
+        msg = EmailMultiAlternatives(
+            subject=f'Подтверждение подписи на категорию - {category}',
+            body='',
+            from_email= DEFAULT_FROM_EMAIL,
+            to=[email,], # это то же, что и recipients_list - передаем коллекцию
+        )
+        
+        msg.attach_alternative('html', 'text/html')
+        try:
+            msg.send() # отсылаем  
+        except Exception as e:
+            print(e)
+        return redirect('')
+
     category.subscribers.add(request.user.id)
-    result = 'Unsubscribed'
     return redirect(request.META.get('HTTP_REFERER'))
     #return JsonResponse(result, safe= False)
 
 def CategoryDetailView(request, pk):
    category = Category.objects.get(pk=pk)
    is_subscribed = True if len(category.subscribers.filter(id=request.user.id)) else False
-   return render(request,'category.html', 
+   return render(request,'news/category.html', 
                  {'category': category,  
                   'is_subscribed' : is_subscribed, #,
                 #   'subscribers': category.subscribers.all()
@@ -173,14 +205,9 @@ def CategoryDetailView(request, pk):
 #         category.subscribers.remove(user.id)
 #     return redirect('index')
 
-# class CategoryDetail(DetailView):
-#     model = Category
-#     template_name = 'category.html'
-#     queryset = Post.objects.all
-
 class СategoryCreateView(CreateView):
     model = Category
-    template_name = 'category_create.html'
+    template_name = 'news/category_create.html'
     fields = '__all__'
     # form_class = PostForm
     success_url = '/'
@@ -188,7 +215,7 @@ class СategoryCreateView(CreateView):
 # проверка на то, что удаляет её создатель или админ, а не какой либо другой автор 
 class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
     permission_required = ('news.delete_post')
-    template_name = 'post_delete.html'
+    template_name = 'news/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/'
     login_url = '/accounts/login/'
@@ -202,7 +229,7 @@ class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
 # дженерик для редактирования объекта
 class PostUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
     permission_required = ('news.change_post')    
-    template_name = 'post_create.html'
+    template_name = 'news/post_create.html'
     form_class = PostForm
     success_url = '/'
     login_url = '/accounts/login/'
@@ -224,7 +251,7 @@ class PostUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
 
 class PostSearch(ListView):
     model = Post  
-    template_name = 'posts_search.html'
+    template_name = 'news/posts_search.html'
     context_object_name = 'posts'
     queryset = Post.objects.order_by('-dateCreation')
 
