@@ -1,0 +1,30 @@
+{% extends 'defaultLayout.html' %} 
+ 
+{% block title %}
+Профиль
+{% endblock title %}
+ 
+{% block abracadabra %}
+
+<h2>Страница авторизованного пользователя {{ request.user.username }}</h2>
+
+<p>{{ user.name }}</p>
+<p>{{ user.email }}</p>
+<h2>Подписки</h2>
+{% if categories_subscribed_to %}
+    <div class="profile card-deck mb-3 text-center">
+        {% for cat in categories_subscribed_to %}
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <h5 class="card-title">{{ cat.name }}</h5>            
+                    <a href = "{% url 'news:category_unsubscribe' cat.id %}" class="btn btn-dark stretched-link">Отписаться</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+   Нет подписок
+{% endif %}
+
+
+{% endblock abracadabra %}

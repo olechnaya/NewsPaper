@@ -29,22 +29,22 @@
      {% with request.resolver_match.url_name as url_name %}
       <ul class="nav nav-pills">
         <li class="nav-item">
-          <a href="{% url 'search' %}" class="nav-link">
+          <a href="{% url 'news:search' %}" class="nav-link">
           
             <svg class="ico text-black" width="24" height="24" fill="currentColor">
               <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #search"></use>
           </svg>
           </a>
         </li>
-        <li class="nav-item"><a href="{% url 'posts' %}" class="nav-link {% if url_name == 'posts' or  url_name == 'post' %}active{% endif %}" aria-current="page">Список Новостей</a></li>
-        <li class="nav-item"><a href="{% url 'categories' %}" class="nav-link {% if url_name == 'categories' or  url_name == 'category' %}active{% endif %}">Категории</a></li>
-        <li class="nav-item"><a href="{% url 'authors' %}" class="nav-link {% if url_name == 'authors' %}active{% endif %}">Авторы</a></li>
+        <li class="nav-item"><a href="{% url 'news:posts' %}" class="nav-link {% if url_name == 'posts' or  url_name == 'post' %}active{% endif %}" aria-current="page">Список Новостей</a></li>
+        <li class="nav-item"><a href="{% url 'news:categories' %}" class="nav-link {% if url_name == 'categories' or  url_name == 'category' %}active{% endif %}">Категории</a></li>
+        <li class="nav-item"><a href="{% url 'news:authors' %}" class="nav-link {% if url_name == 'authors' %}active{% endif %}">Авторы</a></li>
         <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
         <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
         
          {% if user.is_authenticated %}
          <li class="nav-item">
-          <span>Привет, {{ user.username }}</span>
+            <a href="{% url 'user:index' user.id %}"><span>Привет, {{ user.username }}</span></a>
             </li>
           {% endif %}
          {% if user.is_authenticated %}

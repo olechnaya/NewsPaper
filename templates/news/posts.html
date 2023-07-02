@@ -34,7 +34,7 @@
            <h2 class="post-title">Всего статей <span>{{ paginator.count }} штук(и)</span> </h2>
             {% if is_author %}
                 <div>
-                    <a href="{% url 'create' %}" class="btn btn-success">
+                    <a href="{% url 'news:create' %}" class="btn btn-success">
                     <svg class="ico text-white" width="24" height="24" fill="currentColor">
                         <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-medical"></use>
                     </svg>Добавить статью
@@ -110,18 +110,18 @@
                         <p>{{ post.get_category_type}} от {{ post.dateCreation | date:'d.m.y' }} от {{ post.author }}</p>
                         <p>{{ post.preview | truncatechars:50 }}</p>
                         {% if is_author %}
-                            <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">
+                            <a href="{% url 'news:update' post.id %}" class="btn btn-outline-primary btn-sm">
                              <svg class="ico" width="16" height="16" fill="currentColor">
                                 <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-text"></use>
                             </svg>
                             Редактировать</a>
-                            <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">
+                            <a href="{% url 'news:delete' post.id %}" class="btn btn-outline-danger btn-sm">
                                  <svg class="ico" width="16" height="16" fill="currentColor">
                                     <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-x"></use>
                                 </svg>
                             Удалить</a>
                         {% endif%}     
-                        <a href="{% url 'post' post.id %}" class="btn btn-primary btn-sm">
+                        <a href="{% url 'news:post' post.id %}" class="btn btn-primary btn-sm">
                             Читать
                         </a>
                     </div>

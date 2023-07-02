@@ -10,7 +10,7 @@
 {% block abracadabra %}
     <div class="btn-toolbar justify-content-between border-bottom pb-2 mb-5">
         <h1 class="post-title">Категории</h1>
-        <a href="{% url 'create_category' %}" class="btn btn-success d-flex align-items-center">
+        <a href="{% url 'news:create_category' %}" class="btn btn-success d-flex align-items-center">
             <svg class="ico text-white" width="24" height="24" fill="currentColor">
                 <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #plus-lg"></use>
             </svg>Добавить категорию</a>                 
@@ -22,16 +22,9 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ category.name }}</h5>
                     <p class="card-text text-muted">Cat desc</p>
-                    <a href = "{% url 'category' category.id %}" class="btn btn-primary stretched-link">Ознакомиться</a>
+                    <a href = "{% url 'news:category' category.id %}" class="btn btn-primary stretched-link">Ознакомиться</a>
                 </div>
                 </div>
-
-            {% comment %} <div class="card mb-4 box-shadow">
-                <div class="card-body">
-                    <a href="{% url 'category' category.id %}" class="btn btn-link">{{ category.name }}</a>
-                    <a class="btn btn-lg btn-block btn-outline-primary" href = "{% url 'category_subscribe' category.id %}">Подписаться</a>
-                </div>
-                </div> {% endcomment %}
         {% endfor%}
     </div>
 

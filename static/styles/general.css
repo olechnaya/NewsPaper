@@ -68,6 +68,11 @@ small {
 .card-deck .card {
     min-width: 220px;
 }
+
+.profile.card-deck .card {
+    flex:0;
+}
+
 .box-shadow {
     box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .05);
 }
