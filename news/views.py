@@ -63,29 +63,7 @@ class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMi
             raise PermissionDenied("Вы уже достаточно наваяли сегодня, отдохните. Допускается постить до 3 штук в день")
         else:
             return redirect('/')
-        
-    # def get_success_url(self):
-    #     return reverse('post_create',args=(self.object.id,))
-    
-    # def send_my_email(request):        
-    #     send_mail(
-    #         subject= {request.title},
-    #         message= 'Новость добавлена',
-    #         from_email='kozhinova.olka@yandex.ru',
-    #         recipient_list=['data19101988@mail.ru']
-    #     )
-    # def post(self, request):
-    #     super(PostCreateView, self).post(request)
-    #     send_mail(
-    #         subject= 'test',
-    #         message= 'Новость добавлена',
-    #         from_email='kozhinova.olka@yandex.ru',
-    #         recipient_list=['olechnaya@mail.ru']
-
-    #     )
-    #     return redirect('/')
-    
-    
+       
     def handle_no_permission(self):        
         # add custom message
         messages.error(self.request, 'Чтобы создать статью, вам нужно войти в качестве автора')
