@@ -32,7 +32,7 @@
         {% if posts %}
         <div class="btn-toolbar justify-content-between border-bottom pb-2 mb-5">
            <h2 class="post-title">Всего статей <span>{{ paginator.count }} штук(и)</span> </h2>
-            {% if is_author %}
+            {% comment %} {% if is_author %}
                 <div>
                     <a href="{% url 'news:create' %}" class="btn btn-success">
                     <svg class="ico text-white" width="24" height="24" fill="currentColor">
@@ -51,7 +51,7 @@
                         <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #journal-arrow-up"></use>
                     </svg>Стать автором
                 </a>    
-            {% endif%}        
+            {% endif%}         {% endcomment %}
         </div>
         
         {% if paginator.count > 5 %}            

@@ -41,17 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sites', # `allauth` needs this from django. In shell python manage.py migrate 
     'django.contrib.staticfiles',
 
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google', # https://console.developers.google.com/
     'django_filters',
     'widget_tweaks',  
     'django_extensions',
     'django_apscheduler',
 
     'news', #TODO: надо доделать нотификацию менеджмента
-    'accounts',
     'user',
 ]
 
@@ -101,17 +96,9 @@ DATABASES = {
 
 SESSION_REMEMBER=False
 
-LOGIN_URL = '/oauth/login/'
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL', default ="")
-# LOGIN_URL = '/accounts/login/' #- до  использования формы allauth
-LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/accounts/login/' #- до  использования формы allauth
 
-ACCOUNT_FORMS = {    
-    'signup': 'accounts.forms.CustomSignupForm',
-    'login':'accounts.forms.MyLoginForm'
-}
-
-SITE_ID = 1
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -130,18 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend', # Needed to login by username in Django admin, regardless of `allauth`
-    'allauth.account.auth_backends.AuthenticationBackend', # `allauth` specific authentication methods, such as login by e-mail
-]
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_USERNAME_REQUIRED = True
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_SESSION_REMEMBER = False
-ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

@@ -8,54 +8,7 @@ choices = Category.objects.all().values_list('name','name')
 class PostForm(ModelForm):
     error_css_class = 'error'
     required_css_class = 'required'
-
-    # title = forms.CharField(
-    #     label = 'Заголовок поста',
-    #     widget = forms.TextInput(attrs={
-    #         'placeholder': 'Здесь вводим заголовок...', 
-    #         'class':'form-control',
-    #         'id': 'adding-item-title'
-    #     })
-    # )
-
-    # text = forms.CharField(
-    #     label = 'Текст поста',
-    #     widget = forms.Textarea(attrs={
-    #         'placeholder': 'Здесь вводим текст поста...', 
-    #         'class':'form-control',
-    #         'rows': 3,
-    #         'id': 'adding-item-text'
-    #     })
-    # )
-
-    # author = forms.ModelChoiceField(
-    #     label = 'Выбираем автора',
-    #     queryset = Author.objects.all(),
-    #     widget=forms.Select(attrs={
-    #         'class': 'form-select', 
-    #         'id': 'adding-item-author'
-    #     })
-    # )
-
-    # category = forms.ModelMultipleChoiceField(
-    #     label = 'Выбираем категорию',
-    #     # queryset = Category.objects.all(),
-    #     choices = choices,
-    #     widget=forms.CheckboxSelectMultiple(attrs={
-             
-    #         'id': 'adding-item-category'
-    #     })
-    # )
-
-    # postType = forms.ChoiceField(
-    #     label = 'Выбираем тип поста',
-    #     widget = forms.Select(attrs={
-    #         'class': 'form-select', 
-    #         'id': 'adding-item-type'
-    #     }), 
-    #     choices=Post.TYPE
-    # )
-
+ 
     class Meta:
         model = Post
         fields = ['title', 'text', 'author','category', 'postType']
