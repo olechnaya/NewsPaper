@@ -7,7 +7,8 @@ from django.contrib import messages
 from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 
-
+from datetime import timedelta
+from django.utils import timezone
 
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import *
@@ -29,7 +30,7 @@ class PostList(ListView):
     context_object_name = 'posts'
     queryset = Post.objects.order_by('-dateCreation')
     paginate_by = 5 # поставим постраничный вывод в n- элементов
-
+    
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['time_now'] = datetime.utcnow() # добавим переменную текущей даты time_now
@@ -143,67 +144,6 @@ def CategoryDetailView(request, pk):
                 #   'subscribers': category.subscribers.all()
                   'subscribers': category.subscribers.all()
                   }) 
-# from django.urls import resolve
-
-# from django.urls import reverse
-# from django.http import HttpResponseRedirect
-# class NewsCategoryView(ListView):
-#     model = Post  
-#     template_name = 'categories.html'  # указываем имя шаблона, в котором будет лежать HTML, в нём будут все инструкции о том, как именно пользователю должны вывестись наши объекты
-#     context_object_name = 'news'  # это имя списка, в котором будут лежать все объекты
-#     ordering = ['-time_creation']
-#     paginate_by = 15
-#     #form_class = NewsForm
-#     def get_queryset(self):
-#         self.id = resolve(self.request.path_info).kwargs['pk']
-#         c = Category.objects.get(id=self.id)
-#         queryset = Post.objects.filter(category=c)
-#         return queryset
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         user = self.request.user
-#         category  = Category.objects.get(id=self.id)
-#         subscribed = category.subscribers.filter(email=user.email)
-#         if not subscribed: 
-#             context['sub'] = True
-#         else:
-#             context['sub'] = False
-#         context['category'] = category
-#         return context    
-
-# def subscribe_to_category(request,pk):
-#     user = request.user
-#     category = Category.objects.get(id=pk)
-#     if not category.subscribers.filter(id=user.id).exists():
-#         category.subscribers.add(user.id)
-#         email = user.email
-#         html_content = render_to_string (
-#             'mailing/subscribed.html',
-#             {
-#                 'categories': category,
-#                 'user' : user,
-#             },
-#         )
-#         msg = EmailMultiAlternatives(
-#             subject=f'Подтверждение подписи на категорию - {category}',
-#             body='',
-#             from_email='studium2002_1@mail.ru',
-#             to=[email,], # это то же, что и recipients_list
-#         )
-#         msg.attach_alternative(html_content, "text/html") # добавляем html
-#         try:
-#             msg.send() # отсылаем  
-#         except Exception as e:
-#             print(e)
-#         return redirect('index')
-#     return redirect(request.Meta.get('HTTP_REFERER'))
-
-# def unsubscribe_to_category(request,pk):
-#     user = request.user
-#     category = Category.objects.get(id=pk)
-#     if category.subscribers.filter(id=user.id).exists():
-#         category.subscribers.remove(user.id)
-#     return redirect('index')
 
 class СategoryCreateView(CreateView):
     model = Category

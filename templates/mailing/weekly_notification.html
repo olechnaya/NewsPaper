@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Еженедельное оповещение</title>
+</head>
+<body>
+<h1>{{user_name}}, для вас новые новости и статьи на нашем портале: </h1>
+<h2>{{ posts_info.category }}</h2>
+{% for post in posts_info.posts %}
+    <p><a href="http://localhost:8000{% url 'news:post' post.id %}">{{ post.title }}</a></p>
+{% endfor %}
+</body>
+</html>

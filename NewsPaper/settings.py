@@ -47,9 +47,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.google', # https://console.developers.google.com/
     'django_filters',
     'widget_tweaks',  
-     'django_extensions',
-    
-    'news',
+    'django_extensions',
+    'django_apscheduler',
+
+    'news', #TODO: надо доделать нотификацию менеджмента
     'accounts',
     'user',
 ]
@@ -138,10 +139,10 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SESSION_REMEMBER = False
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
-ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 

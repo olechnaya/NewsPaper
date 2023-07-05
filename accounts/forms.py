@@ -1,11 +1,13 @@
 from django import forms
 from django.contrib.auth.models import User, Group
 from allauth.account.forms import SignupForm, LoginForm
+from django.conf import settings 
+from django.core.mail import send_mail
 
 class CustomSignupForm(SignupForm):
     required_css_class = 'required'
     error_css_class = 'error'
-
+  
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.label_suffix = "" 
