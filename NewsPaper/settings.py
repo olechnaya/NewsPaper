@@ -142,6 +142,7 @@ ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_SESSION_REMEMBER = False
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = True
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
