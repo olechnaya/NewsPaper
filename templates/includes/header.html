@@ -1,0 +1,37 @@
+{% load static %}
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">        
+        <span class="fs-4">НОВОСТИ</span>
+      </a>
+     {% with request.resolver_match.url_name as url_name %}
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a href="{% url 'news:search' %}" class="nav-link">
+          
+            <svg class="ico text-black" width="24" height="24" fill="currentColor">
+              <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #search"></use>
+          </svg>
+          </a>
+        </li>
+        <li class="nav-item"><a href="{% url 'news:posts' %}" class="nav-link {% if url_name == 'posts' or  url_name == 'post' %}active{% endif %}" aria-current="page">Список Новостей</a></li>
+        <li class="nav-item"><a href="{% url 'news:categories' %}" class="nav-link {% if url_name == 'categories' or  url_name == 'category' %}active{% endif %}">Категории</a></li>
+        <li class="nav-item"><a href="{% url 'news:authors' %}" class="nav-link {% if url_name == 'authors' %}active{% endif %}">Авторы</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
+        <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
+        
+         {% if user.is_authenticated %}
+         <li class="nav-item">
+            <a href="{% url 'user:index' user.id %}"><span>Привет, {{ user.username }}</span></a>
+            </li>
+          {% endif %}
+         {% if user.is_authenticated %}
+       
+              <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Выйти</a></li>
+         {% else %}
+            {% comment %} <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Войти</a></li> {% endcomment %}
+            <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link">Войти</a></li>
+          {% endif %}
+       
+      </ul>
+      {% endwith %}
+    </header>

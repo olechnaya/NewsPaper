@@ -5,73 +5,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>{% block title %}  {% endblock title %}</title>
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'styles/general.css' %}" />
-    
-    {% block page_styles %}
-     {% endblock page_styles %}
-
+    {% block page_styles %}{% endblock page_styles %}
     <link type="image/x-icon" rel="icon" href="{% static 'img/favicon.ico' %}" />
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0">
-   
-  <div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-      <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">        
-        <span class="fs-4">НОВОСТИ</span>
-      </a>
-     {% with request.resolver_match.url_name as url_name %}
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a href="{% url 'news:search' %}" class="nav-link">
-          
-            <svg class="ico text-black" width="24" height="24" fill="currentColor">
-              <use xlink:href="{% static 'img/bootstrap-icons.svg' %} #search"></use>
-          </svg>
-          </a>
-        </li>
-        <li class="nav-item"><a href="{% url 'news:posts' %}" class="nav-link {% if url_name == 'posts' or  url_name == 'post' %}active{% endif %}" aria-current="page">Список Новостей</a></li>
-        <li class="nav-item"><a href="{% url 'news:categories' %}" class="nav-link {% if url_name == 'categories' or  url_name == 'category' %}active{% endif %}">Категории</a></li>
-        <li class="nav-item"><a href="{% url 'news:authors' %}" class="nav-link {% if url_name == 'authors' %}active{% endif %}">Авторы</a></li>
-        <li class="nav-item"><a href="#" class="nav-link disabled">Критики</a></li>
-        <li class="nav-item"><a href="#" class="nav-link disabled">О проекте</a></li>
+   <div class="container">
+    {% load cache %}
+      {% cache 30 header %} <!-- Кэшируем header блок на 30 секунд -->
+        {% include "includes/header.html" %}
+      {% endcache %}    
+        {% block abracadabra %}
         
-         {% if user.is_authenticated %}
-         <li class="nav-item">
-            <a href="{% url 'user:index' user.id %}"><span>Привет, {{ user.username }}</span></a>
-            </li>
-          {% endif %}
-         {% if user.is_authenticated %}
-       
-              <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Выйти</a></li>
-         {% else %}
-            {% comment %} <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Войти</a></li> {% endcomment %}
-            <li class="nav-item"><a href="{% url 'account_login' %}" class="nav-link">Войти</a></li>
-          {% endif %}
-       
-      </ul>
-      {% endwith %}
-    </header>
-  </div>
-  
-    <div class="container">
-      {% block abracadabra %}
-
-      {% endblock abracadabra %}
-      
+        {% endblock abracadabra %}
     </div>
-    </main>
-  
-    <footer class="footer mt-auto py-3 ">
-      <div class="container">
-        <p><a href="https://getbootstrap.com/">© ООО Django обучалка-ковырялка. 2023</a>.</p>
-      </div>
-    </footer>
+  </main>
+  {% load cache %}
+  {% cache 30 footer %} <!-- Кэшируем отдельный блок на 30 секунд -->
+     {% include "includes/footer.html" %}
+  {% endcache %}
   </body>
 </html>

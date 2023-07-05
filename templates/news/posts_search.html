@@ -51,9 +51,9 @@
                  <span class="badge text-bg-secondary">{{ category.name }}</span>
                 {% endfor%}
             </p>
-            <a href="{% url 'update' post.id %}" class="btn btn-outline-primary btn-sm">Редактировать</a>
-            <a href="{% url 'delete' post.id %}" class="btn btn-outline-danger btn-sm">Удалить</a>
-            <a href="{% url 'post' post.id %}" class="btn btn-primary btn-sm">
+            <a href="{% url 'news:update' post.id %}" class="btn btn-outline-primary btn-sm">Редактировать</a>
+            <a href="{% url 'news:delete' post.id %}" class="btn btn-outline-danger btn-sm">Удалить</a>
+            <a href="{% url 'news:post' post.id %}" class="btn btn-primary btn-sm">
                 Читать
             </a>
         </div>

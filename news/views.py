@@ -58,7 +58,7 @@ class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMi
     template_name = 'news/post_create.html'
     form_class = PostForm
     success_url = '/'
-    login_url = '/accounts/login/'
+    login_url = settings.LOGIN_URL
 
     def test_func(self):
         yesterday = datetime.now() - timedelta(days=1)
@@ -72,7 +72,7 @@ class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMi
     def handle_no_permission(self):        
         # add custom message
         messages.error(self.request, 'Чтобы создать статью, вам нужно войти в качестве автора')
-        return redirect(self.get_login_url())
+        return redirect(self.request.get_full_path(),self.get_login_url())
         
 class NewsCategoryView(ListView):
     model = Category
@@ -158,7 +158,8 @@ class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
     template_name = 'news/post_delete.html'
     queryset = Post.objects.all()
     success_url = '/'
-    login_url = '/accounts/login/'
+    login_url = settings.LOGIN_URL
+    redirect_field_name = 'redirect_to'
     
     def handle_no_permission(self):        
         # add custom message
@@ -172,7 +173,7 @@ class PostUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
     template_name = 'news/post_create.html'
     form_class = PostForm
     success_url = '/'
-    login_url = '/accounts/login/'
+    login_url = settings.LOGIN_URL
     
     # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте который мы собираемся редактировать
     def get_object(self, **kwargs):
@@ -200,6 +201,11 @@ class PostSearch(ListView):
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset()) # вписываем наш фильтр в контекст
         return context
 
+from django.views.decorators.cache import cache_page # импортируем декоратор для кэширования отдельного представления
+from django.http import HttpResponse
+@cache_page(60 * 15) # в аргументы к декоратору передаём количество секунд, которые хотим, чтобы страница держалась в кэше. Внимание! Пока страница находится в кэше, изменения, происходящие на ней, учитываться не будут!
+def some_page(request, question_id):
+    return HttpResponse("Вопрос под номером %s." % question_id)
 
 def error_404(request, exception):
        return render(request, 'errors/404.html', {'exception': exception})
