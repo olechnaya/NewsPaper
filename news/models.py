@@ -1,7 +1,8 @@
 from django.db import models
 from django.db.models import Sum
 from django.contrib.auth.models import User
-from datetime import datetime
+from django.core.cache import cache
+
 
 class Author(models.Model):
     class Meta:
@@ -22,7 +23,8 @@ class Author(models.Model):
         self.save()
     
     def __str__(self):        
-            return self.name.username
+        return self.name.username
+
 
 class Category(models.Model):
     class Meta:
@@ -33,30 +35,54 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
-
+    
+    
 class Post(models.Model):
+    """
+    A class to represent a Post.
+
+    ...
+
+    Attributes
+    ----------
+    title : str
+        title of Post
+    text : str
+        text of Post
+    rating : int
+        rating of Post
+
+    Methods
+    -------
+    like(additional=""):
+        Increase the post rating.
+    """
+
     class Meta:
         verbose_name = 'Посты'
         verbose_name_plural = 'Посты'
-    article = "ART"
+        
+   
+    article: str = "ART"
     news = "NWS"
-
+    
     TYPE = [
         (article, "Статья"),
         (news, "Новость"),
     ]
-    author = models.ForeignKey(Author,on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
     postType = models.CharField(max_length=20, choices=TYPE, default=article)
     dateCreation = models.DateTimeField(auto_now_add=True)
     category = models.ManyToManyField(Category, through='PostCategory')
     title = models.CharField(max_length=128)
     text = models.TextField()
     rating = models.SmallIntegerField(default=0.0)
-
+    
     def __str__(self):
         return self.title
 
-    # Методы like() и dislike() в моделях Comment и Post, которые увеличивают/уменьшают рейтинг на единицу.
+    # Методы like() и dislike() в моделях Comment и Post, 
+    # которые увеличивают/уменьшают рейтинг на единицу.
     def like(self):
         self.rating += 1
         self.save()
@@ -65,20 +91,27 @@ class Post(models.Model):
         self.rating -= 1
         self.save()
 
-    # Метод preview() возвращает начало статьи (предварительный просмотр) длиной 124 символа и добавляет многоточие в конце.
+    # Метод preview() возвращает начало статьи (предварительный просмотр)
+    # длиной 124 символа и добавляет многоточие в конце.
     def preview(self):
         return "".join((self.text[0:124],'...'))
     
     def get_category_type(self):
         return self.get_postType_display()
     
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs) # сначала вызываем метод родителя, чтобы объект сохранился
+        cache.delete(f'post-{self.pk}') # затем удаляем его из кэша, чтобы сбросить его
+    
     # def get_absolute_url(self):
     #      # добавим абсолютный путь, чтобы после создания нас перебрасывало на страницу с постом       
     #     return f'/posts/{self.id}' 
 
+
 class PostCategory(models.Model):
     postThrough = models.ForeignKey(Post, on_delete=models.CASCADE)
     categoryThrough = models.ForeignKey(Category, on_delete=models.CASCADE)
+
 
 class Comment(models.Model):
     class Meta:
@@ -94,7 +127,7 @@ class Comment(models.Model):
     # как добраться до промежуточных моделей
     # вывод имени автора
 
-    def __str__(self):
+    def __str__(self): 
         try:
             return self.commentPost.author.name.userName
         except:

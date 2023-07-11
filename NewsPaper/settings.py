@@ -187,3 +187,7 @@ CACHES = {
 
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# 404 ошибка будет выводиться при запросе несуществующего поста
+# DEBUG = False
+ALLOWED_HOSTS = ['*']

@@ -1,0 +1,11 @@
+
+python manage.py dumpdata --format=xml > mydata.xml
+python manage.py loaddata mydata.xml
+
+python manage.py dumpdata --format=xml news > newsdata.xml
+python manage.py dumpdata news news.category
+
+-----
+ django-admin help --commands 
+
+ глюк с win10 https://itnan.ru/post.php?c=1&p=557108#nav-wrap

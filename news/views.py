@@ -37,12 +37,24 @@ class PostList(ListView):
         context['is_author'] = self.request.user.groups.filter(name = 'authors').exists()
         # context['all_posts'] =  Post.objects.order_by('-dateCreation')
         return context
-       
+
+from django.core.cache import cache # импортируем наш кэш      
 # создаём представление, в котором будут детали конкретного отдельного товара
 class PostDetail(DetailView):
     model = Post 
     template_name = 'news/post.html'
     context_object_name = 'post'
+
+    
+    def get_object(self, *args, **kwargs): # переопределяем метод получения объекта, как ни странно
+        obj = cache.get(f'post-{self.kwargs["pk"]}', None) # кэш очень похож на словарь, и метод get действует также. Он забирает значение по ключу, если его нет, то забирает None.
+ 
+        # если объекта нет в кэше, то получаем его и записываем в кэш
+        if not obj:
+            obj = super().get_object(queryset=self.queryset) 
+            cache.set(f'post-{self.kwargs["pk"]}', obj)
+        
+        return obj
 
 # class based  views  выполняют за нас значительную часть задач
 # function based views можно использовать также - не забывать
@@ -166,15 +178,16 @@ class PostDeleteView(LoginRequiredMixin,PermissionRequiredMixin, DeleteView):
         messages.error(self.request, 'Чтобы удалить статью, вам нужно войти в качестве автора')
         return redirect(self.get_login_url())
 
+
 # проверка на то, что редактирует её создатель или админ, а не какой либо другой автор 
 # дженерик для редактирования объекта
-class PostUpdateView(LoginRequiredMixin,PermissionRequiredMixin, UpdateView):
+class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
     permission_required = ('news.change_post')    
     template_name = 'news/post_create.html'
     form_class = PostForm
     success_url = '/'
     login_url = settings.LOGIN_URL
-    
+
     # метод get_object мы используем вместо queryset, чтобы получить информацию об объекте который мы собираемся редактировать
     def get_object(self, **kwargs):
         id = self.kwargs.get('pk')
@@ -208,7 +221,7 @@ def some_page(request, question_id):
     return HttpResponse("Вопрос под номером %s." % question_id)
 
 def error_404(request, exception):
-       return render(request, 'errors/404.html', {'exception': exception})
+       return render(request, 'errors/404.html', { 'exception': 'Ошибочка...'})# {'exception': exception})
 
 def error_403(request, exception):
         return render(request, 'errors/403.html', {'exception': exception})

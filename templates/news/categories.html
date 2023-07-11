@@ -21,7 +21,7 @@
             <div class="card mb-4 box-shadow">
                 <div class="card-body">
                     <h5 class="card-title">{{ category.name }}</h5>
-                    <p class="card-text text-muted">Cat desc</p>
+                    <p class="card-text text-muted">Всего постов: {{ category.post_set.all.count }}</p>
                     <a href = "{% url 'news:category' category.id %}" class="btn btn-primary stretched-link">Ознакомиться</a>
                 </div>
                 </div>

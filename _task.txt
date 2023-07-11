@@ -1,0 +1,141 @@
++ В классе-представлении редактирования новости добавить проверку аутентификации.
+
++ Выполнить необходимые настройки пакета allauth в файле конфигурации.
+
++ В файле конфигурации определить адрес для перенаправления на страницу входа в систему и адрес перенаправления после успешного входа.
++ Реализовать шаблон с формой входа в систему и выполнить настройку конфигурации URL.
+
+-----> yавести порядок 
+- Реализовать шаблон страницы регистрации пользователей.
++ Реализовать возможность регистрации через Google-аккаунт.
++ Создать группы common и authors.
+
++ Реализовать автоматическое добавление новых пользователей в группу common.
++ после регистрации - редирект на главную - но без логина??? как так?
+
+
++ Создать возможность стать автором (быть добавленным в группу authors).
++ Для группы authors предоставить права создания и редактирования объектов модели Post (новостей и статей).
++ В классах-представлениях добавления и редактирования новостей и статей добавить проверку прав доступа.
+Исходный код залить в git-репозиторий.
+
+
+docstrings for METHOD
+'''
+    Returns the sum of two decimal numbers in binary digits.
+
+            Parameters:
+                    a (int): A decimal integer
+                    b (int): Another decimal integer
+
+            Returns:
+                    binary_sum (str): Binary string of the sum of a and b
+    '''
+
+Docstrings for Python class
+class Person:
+    """
+    A class to represent a person.
+
+    ...
+
+    Attributes
+    ----------
+    name : str
+        first name of the person
+    surname : str
+        family name of the person
+    age : int
+        age of the person
+
+    Methods
+    -------
+    info(additional=""):
+        Prints the person's name and age.
+    """
+
+    def __init__(self, name, surname, age):
+        """
+        Constructs all the necessary attributes for the person object.
+
+        Parameters
+        ----------
+            name : str
+                first name of the person
+            surname : str
+                family name of the person
+            age : int
+                age of the person
+        """
+
+        self.name = name
+        self.surname = surname
+        self.age = age
+
+    def info(self, additional=""):
+        """
+        Prints the person's name and age.
+
+        If the argument 'additional' is passed, then it is appended after the main info.
+
+        Parameters
+        ----------
+        additional : str, optional
+            More info to be displayed (default is None)
+
+        Returns
+        -------
+        None
+        """
+
+        print(f'My name is {self.name} {self.surname}. I am {self.age} years old.' + additional)
+
+print(Person.__doc__)
+
+============--еще пример Для классов докстроки --==========
+class DatabaseProcess:
+    """
+    A process interacting with a database
+ 
+    Attributes
+    ----------
+    db_name : str
+        database name
+    timeout : int
+        connection timeout (in ms)
+ 
+    Methods
+    -------
+    get(entity_name, id=None)
+        Gets entity by name and an optional ID.
+    """
+ 
+    db_name = "users"
+ 
+    def get(self, entity_name, entity_id=None):
+        """Gets entity by name and an optional ID.
+ 
+        If the argument `entity_id` isn't passed in,
+        the first entity is returned.
+ 
+        Parameters
+        ----------
+        entity_name: str
+            The entity name (also known as the table name).
+        entity_id : int, optional
+            The ID of the entity.
+ 
+        Raises
+        ------
+        DatabaseError
+            If the database returned an error.
+        """
+ 
+        return db_conn.get(
+            table=entity_name,
+            filters=(
+                {'id': entity_id}
+                if entity_id is not None
+                else {}
+            )
+        )
