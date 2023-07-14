@@ -94,7 +94,8 @@
             </ul>
           </nav>            
         {% endif%} 
-            
+            <h3>Сегодня:  {{ time_now|date:'M d Y' }}</h3>
+            <h2>Raise dbError: {{ dbError }}</h2>
             <!-- <h3> За дату: {{ time_now|date:'M d Y' }}</h3> -->
             {% comment %} {% for post in all_posts %} {% endcomment %}
              {% for post in posts %}

@@ -1,0 +1,106 @@
+2023-07-14 13:44:15,239 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:44:15,297 ERROR views -----Logging works!---------
+2023-07-14 13:46:08,800 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py changed, reloading.
+2023-07-14 13:46:11,282 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:46:11,346 ERROR views -----Logging works!---------
+2023-07-14 13:48:35,335 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py changed, reloading.
+2023-07-14 13:48:40,464 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:48:40,524 ERROR views -----Logging works!---------
+2023-07-14 13:49:03,257 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py changed, reloading.
+2023-07-14 13:49:06,067 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:49:06,123 ERROR views -----Logging works!---------
+2023-07-14 13:49:17,891 ERROR log Internal Server Error: /
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+2023-07-14 13:49:26,749 ERROR basehttp "GET / HTTP/1.1" 500 145
+2023-07-14 13:50:36,894 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py changed, reloading.
+2023-07-14 13:50:39,155 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:50:39,215 ERROR views -----Logging works!---------
+2023-07-14 13:52:54,117 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 13:52:56,585 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:52:56,649 ERROR views -----Logging works!---------
+2023-07-14 13:53:23,126 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py changed, reloading.
+2023-07-14 13:53:26,709 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:53:26,769 ERROR views -----Logging works!---------
+2023-07-14 13:53:32,224 ERROR log Internal Server Error: /
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+2023-07-14 13:53:32,453 ERROR basehttp "GET / HTTP/1.1" 500 145
+2023-07-14 13:53:50,520 ERROR log Internal Server Error: /
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+2023-07-14 13:53:50,669 ERROR basehttp "GET / HTTP/1.1" 500 145
+2023-07-14 13:56:24,429 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 13:56:26,898 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 13:56:26,949 ERROR views -----Logging works!---------
+2023-07-14 14:03:52,809 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:03:52,861 ERROR views -----Logging works!---------

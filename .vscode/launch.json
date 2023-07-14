@@ -23,16 +23,6 @@
             "args": [
                 "shell"
             ]
-        },
-        {
-            "name": "Django Clearcat",
-            "type": "python",
-            "request": "launch",
-            "program": "${workspaceFolder}/manage.py",
-            "args": [
-                "clearcat",
-                "IT"
-            ]
         }
     ]
 }

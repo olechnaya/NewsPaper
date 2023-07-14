@@ -1,0 +1,1990 @@
+2023-07-14 13:53:50,520 ERROR Internal Server Error: / (<class 'news.models.Post.DoesNotExist'>, DoesNotExist('Post matching query does not exist.'), <traceback object at 0x00000191BA530780>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+2023-07-14 13:53:50,669 ERROR "GET / HTTP/1.1" 500 145 None
+2023-07-14 13:56:35,966 ERROR Internal Server Error: / (<class 'news.models.Post.DoesNotExist'>, DoesNotExist('Post matching query does not exist.'), <traceback object at 0x000002180AA3A3C0>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+2023-07-14 13:56:36,082 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180AA9C4C0>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:36,177 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180AA1CC80>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:36,285 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180AB8E340>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:36,553 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180AA2F9C0>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:36,720 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180ABFDE80>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:36,909 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180ABF9B80>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:37,231 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180AAB0E00>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:37,661 ERROR Internal Server Error: / (<class 'TypeError'>, TypeError('expected str, bytes or os.PathLike object, not NoneType'), <traceback object at 0x000002180ABD21C0>)
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py", line 41, in get_context_data
+    context["dbError"] = Post.objects.get(pk=1435)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\db\models\query.py", line 637, in get
+    raise self.model.DoesNotExist(
+news.models.Post.DoesNotExist: Post matching query does not exist.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\middleware\mobile_or_full_middleware.py", line 6, in __call__
+    response = self.get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\deprecation.py", line 134, in __call__
+    response = response or self.get_response(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\handlers\exception.py", line 143, in response_for_exception
+    log_response(
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 241, in log_response
+    getattr(logger, level)(
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1518, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1634, in _log
+    self.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1644, in handle
+    self.callHandlers(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 1706, in callHandlers
+    hdlr.handle(record)
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\logging\__init__.py", line 978, in handle
+    self.emit(record)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 128, in emit
+    self.send_mail(subject, message, fail_silently=True, html_message=html_message)
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 132, in send_mail
+    subject, message, *args, connection=self.connection(), **kwargs
+                                        ^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\utils\log.py", line 136, in connection
+    return get_connection(backend=self.email_backend, fail_silently=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\__init__.py", line 51, in get_connection
+    return klass(fail_silently=fail_silently, **kwds)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\User\Desktop\обучение\django projects\NewsPaper\venv\Lib\site-packages\django\core\mail\backends\filebased.py", line 18, in __init__
+    self.file_path = os.path.abspath(self.file_path)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 580, in abspath
+    return _getfullpathname(normpath(path))
+                            ^^^^^^^^^^^^^^
+  File "C:\Users\User\AppData\Local\Programs\Python\Python311\Lib\ntpath.py", line 547, in normpath
+    path = os.fspath(path)
+           ^^^^^^^^^^^^^^^
+TypeError: expected str, bytes or os.PathLike object, not NoneType
+2023-07-14 13:56:38,503 ERROR "GET / HTTP/1.1" 500 59 None

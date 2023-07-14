@@ -15,6 +15,9 @@ from .models import *
 from .forms import PostForm
 from .filters import PostFilter
 from django.conf import settings
+import logging
+
+logger = logging.getLogger("django")
 
 DEFAULT_FROM_EMAIL = settings.DEFAULT_FROM_EMAIL
 
@@ -30,9 +33,12 @@ class PostList(ListView):
     context_object_name = 'posts'
     queryset = Post.objects.order_by('-dateCreation')
     paginate_by = 5 # поставим постраничный вывод в n- элементов
+
+    logger.error('-----Logging works!---------')
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context["dbError"] = Post.objects.get(pk=1435)
         context['time_now'] = datetime.utcnow() # добавим переменную текущей даты time_now
         context['is_author'] = self.request.user.groups.filter(name = 'authors').exists()
         # context['all_posts'] =  Post.objects.order_by('-dateCreation')
@@ -76,7 +82,8 @@ class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMi
         yesterday = datetime.now() - timedelta(days=1)
         author = Author.objects.get(name_id=self.request.user.id)
         post_per_day = Post.objects.filter(author=author, dateCreation__gt=yesterday).count()
-        if post_per_day > 3:
+        if post_per_day > 2:
+            logger.error(f"У нас потенциальный спaмер новостей: {author}")
             raise PermissionDenied("Вы уже достаточно наваяли сегодня, отдохните. Допускается постить до 3 штук в день")
         else:
             return redirect('/')
@@ -85,7 +92,8 @@ class PostCreateView(UserPassesTestMixin,LoginRequiredMixin,PermissionRequiredMi
         # add custom message
         messages.error(self.request, 'Чтобы создать статью, вам нужно войти в качестве автора')
         return redirect(self.request.get_full_path(),self.get_login_url())
-        
+
+
 class NewsCategoryView(ListView):
     model = Category
     template_name = 'news/categories.html'
@@ -150,6 +158,7 @@ def SubscribeCategory(request, pk):
 def CategoryDetailView(request, pk):
    category = Category.objects.get(pk=pk)
    is_subscribed = True if len(category.subscribers.filter(id=request.user.id)) else False
+
    return render(request,'news/category.html', 
                  {'category': category,  
                   'is_subscribed' : is_subscribed, #,
@@ -203,12 +212,14 @@ class PostUpdateView(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
         messages.error(self.request, 'Чтобы редактировать статью, вам нужно войти в качестве автора')
         return redirect(self.get_login_url())
 
+# log = logging.getLogger(__name__)
+
 class PostSearch(ListView):
     model = Post  
     template_name = 'news/posts_search.html'
     context_object_name = 'posts'
-    queryset = Post.objects.order_by('-dateCreation')
-
+    queryset = Post.objects.order_by('-dateCreation')      
+    
     def get_context_data(self, **kwargs): # забираем отфильтрованные объекты переопределяя метод get_context_data у наследуемого класса (привет, полиморфизм, мы скучали!!!)
         context = super().get_context_data(**kwargs)
         context['filter'] = PostFilter(self.request.GET, queryset=self.get_queryset()) # вписываем наш фильтр в контекст
