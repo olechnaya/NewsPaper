@@ -38,7 +38,7 @@ class PostList(ListView):
     
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["dbError"] = Post.objects.get(pk=1435)
+        # context["dbError"] = Post.objects.get(pk=1435)
         context['time_now'] = datetime.utcnow() # добавим переменную текущей даты time_now
         context['is_author'] = self.request.user.groups.filter(name = 'authors').exists()
         # context['all_posts'] =  Post.objects.order_by('-dateCreation')

@@ -104,3 +104,9 @@ news.models.Post.DoesNotExist: Post matching query does not exist.
 2023-07-14 13:56:26,949 ERROR views -----Logging works!---------
 2023-07-14 14:03:52,809 INFO autoreload Watching for file changes with StatReloader
 2023-07-14 14:03:52,861 ERROR views -----Logging works!---------
+2023-07-14 14:04:53,273 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\news\views.py changed, reloading.
+2023-07-14 14:04:55,908 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:04:55,970 ERROR views -----Logging works!---------
+2023-07-14 14:05:03,305 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:05:03,361 ERROR views -----Logging works!---------
+2023-07-14 14:05:37,958 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
