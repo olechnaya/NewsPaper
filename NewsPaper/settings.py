@@ -22,6 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY', default="")
+SECRET_KEY = "django-insecure-adkfe%%i%c4cjvnd35j0#ph+8+q&(v9+)_!=uuw&t%rmwyj3gg"
 
 
 ALLOWED_HOSTS = []
@@ -155,13 +156,21 @@ USE_I18N = True
 
 USE_TZ = True
 
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = False
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
 
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static"
+# ]
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static"
+    ('static', './'),
 ]
 
 # Default primary key field type
@@ -183,10 +192,6 @@ CACHES = {
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'), # Указываем, куда будем сохранять кэшируемые файлы! Не забываем создать папку cache_files внутри папки с manage.py!
     }
 }
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
 
 if not DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -346,14 +351,14 @@ LOGGERS = (
 )
 
 
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "filters": FILTERS,
-    "formatters": FORMATTERS[0],
-    "handlers": HANDLERS,
-    "loggers": LOGGERS[0],   
-}
+# LOGGING = {
+#     "version": 1,
+#     "disable_existing_loggers": False,
+#     "filters": FILTERS,
+#     "formatters": FORMATTERS[0],
+#     "handlers": HANDLERS,
+#     "loggers": LOGGERS[0],   
+# }
 
 # LOGGERS = {
 #     {

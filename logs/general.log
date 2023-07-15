@@ -110,3 +110,68 @@ news.models.Post.DoesNotExist: Post matching query does not exist.
 2023-07-14 14:05:03,305 INFO autoreload Watching for file changes with StatReloader
 2023-07-14 14:05:03,361 ERROR views -----Logging works!---------
 2023-07-14 14:05:37,958 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:43:54,303 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:43:54,390 ERROR views -----Logging works!---------
+2023-07-14 14:44:03,245 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:44:06,172 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:44:06,232 ERROR views -----Logging works!---------
+2023-07-14 14:44:59,515 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:45:02,143 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:45:02,198 ERROR views -----Logging works!---------
+2023-07-14 14:45:14,815 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:45:17,251 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:45:17,308 ERROR views -----Logging works!---------
+2023-07-14 14:45:32,825 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:45:35,415 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:45:35,490 ERROR views -----Logging works!---------
+2023-07-14 14:45:39,808 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:45:39,862 ERROR views -----Logging works!---------
+2023-07-14 14:45:46,741 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:45:53,309 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:45:53,364 ERROR views -----Logging works!---------
+2023-07-14 14:45:59,826 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:46:02,318 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:46:02,371 ERROR views -----Logging works!---------
+2023-07-14 14:46:36,346 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:46:38,828 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:46:38,884 ERROR views -----Logging works!---------
+2023-07-14 14:49:02,343 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:49:04,915 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:49:04,982 ERROR views -----Logging works!---------
+2023-07-14 14:49:11,433 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:49:11,493 ERROR views -----Logging works!---------
+2023-07-14 14:50:37,157 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:50:39,719 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:50:39,808 ERROR views -----Logging works!---------
+2023-07-14 14:54:59,876 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:54:59,903 ERROR views -----Logging works!---------
+2023-07-14 14:55:29,578 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:55:30,616 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:55:30,641 ERROR views -----Logging works!---------
+2023-07-14 14:56:20,223 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:56:21,489 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:56:21,515 ERROR views -----Logging works!---------
+2023-07-14 14:57:00,258 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:57:01,323 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:57:01,352 ERROR views -----Logging works!---------
+2023-07-14 14:57:59,072 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 14:57:59,973 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 14:57:59,999 ERROR views -----Logging works!---------
+2023-07-14 14:59:56,089 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 15:01:10,071 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:01:10,099 ERROR views -----Logging works!---------
+2023-07-14 15:02:01,201 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 15:02:02,251 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:02:02,277 ERROR views -----Logging works!---------
+2023-07-14 15:03:14,511 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:03:14,565 ERROR views -----Logging works!---------
+2023-07-14 15:08:53,973 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:08:54,000 ERROR views -----Logging works!---------
+2023-07-14 15:09:20,518 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:09:20,544 ERROR views -----Logging works!---------
+2023-07-14 15:09:43,294 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:09:43,321 ERROR views -----Logging works!---------
+2023-07-14 15:13:01,867 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
+2023-07-14 15:13:03,007 INFO autoreload Watching for file changes with StatReloader
+2023-07-14 15:13:03,035 ERROR views -----Logging works!---------
+2023-07-14 15:16:15,341 INFO autoreload C:\Users\User\Desktop\обучение\django projects\NewsPaper\NewsPaper\settings.py changed, reloading.
